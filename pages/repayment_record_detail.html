@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>还款记录详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/reset.mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/comm.css">
+		<style>
+			.record{
+				width: 94%;
+				margin: 0 auto;
+			}
+			.record ul{
+				padding: 0px;
+				width: 100%;
+				margin-top: 10px;
+			}
+			.record ul li{
+				list-style:none;
+			}
+			.record-pay-off{
+				background: #FFFFFF;
+				height: 44px;
+				line-height: 44px;
+				border-radius: 4px;
+				font-size: 15px;
+				color: #333333;
+				padding-left: 12px;
+				font-weight: bold;
+				margin-bottom: 10px;
+			}
+			.font-w500{
+				font-weight: 500;
+			}
+			.record-pay-off-money{
+				font-size: 18px;
+				color: #29C528;
+			}
+			.record-should-also{
+				width: 100%;
+				background: #FFFFFF;
+				border-radius: 4px;
+				margin-bottom: 10px;
+			}
+			.record-period{
+				font-size: 15px;
+				color: #333333;
+				height: 44px;
+				line-height: 44px;
+				border-bottom: 1px solid #e5e5e5;
+				padding-left: 12px;
+				font-weight: bold;
+			}
+			.record-period span{
+				font-weight: 500;
+				color: red;
+				font-weight: bold;
+				font-size: 17px;
+			}
+			.record-effect-date{
+				color:#2A2A2A;
+				font-size: 12px;
+				float: right;
+				padding-right: 12px;
+				font-weight: 500;
+			}
+			.record-info{
+				width: 100%;
+				height: 68px;
+				border-bottom: 1px solid #e5e5e5;
+			}
+			.record-info-bw{
+				width: 100%;
+				height: 22px;
+				line-height: 22px;
+				font-size: 12px;
+				color: #666666;
+				padding-top:12px;
+				padding-left: 12px;
+			}
+			.record-info-lf{
+				width: 100%;
+				height: 22px;
+				line-height: 22px;
+				font-size: 12px;
+				color: #666666;
+				padding-left: 12px;
+				clear: both;
+			}
+			.record-nper{
+				font-size: 12px;
+				color: #888888;
+				height: 44px;
+				line-height: 44px;
+				padding-left: 12px;
+			}
+			.record-nper-now{
+				color: #151515;
+				font-weight: bold;
+			}
+			.paddingRight12{
+				padding-right: 12px;
+			}
+			.paddingLeft12{
+				padding-left: 12px;
+			}
+			.record-clear{
+				clear: both;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></a>
+		    <h1 class="mui-title">还款记录详情</h1>
+		</header>
+		<div class="mui-content" id="muiContent">
+			<div class="record">
+				<ul>
+					<li class="record-pay-off">
+						已经还款: <span class="font-w500"><span class="record-pay-off-money">¥ 5000.00</span> 元</span>
+					</li>
+					
+					<li class="record-should-also">
+						<div class="record-period">
+							本期应还: <span>¥ 1120.00</span>
+							<div class="record-effect-date">生效日期:2017.12.05</div>
+						</div>
+						<div class="record-info">
+							<div class="record-info-bw">
+								<span class="mui-pull-left">本金: ¥ 1000.00</span>
+								<span class="mui-pull-right paddingRight12">违约金: ¥ 0.00</span>
+							</div>
+							<div class="record-info-lf">
+								<span class="mui-pull-left">利息: ¥ 1000.00</span>
+								<span class="mui-pull-right paddingRight12">服务费: ¥ 0.00</span>
+							</div>
+						</div>
+						<div class="record-nper">
+							<span>本期期数:<span class="record-nper-now">5</span></span>
+							<span class="paddingLeft12">剩余期数:<span class="record-nper-now">7</span></span>
+						</div>
+					</li>
+					
+					<li class="record-should-also">
+						<div class="record-period">
+							已还记录
+						</div>
+						<div class="bc-progress-timeaxis">
+							<div class="timeline">
+								<div class="timeline-left">
+									<div class="xian"></div>
+									<div class="time"></div>
+									<span class="date">2017 12.19</span>
+								</div>
+								<div class="timeline-right">
+									<div class="amount">¥1120.00
+										<span>[已结清]</span>
+									</div>
+									<div class="amount-detail-money">
+										<div class="amount-bl">本金:¥1200.00</div>
+										<div class="amount-lf">违约金:¥0.00</div>
+									</div>
+									<div class="amount-detail-money record-clear">
+										<div class="amount-bl">利息:¥120.00</div>
+										<div class="amount-lf">服务费:¥0.00</div>
+									</div>
+								</div>
+							</div>
+							<div class="timeline">
+								<div class="timeline-left">
+									<div class="xian"></div>
+									<div class="time"></div>
+									<span class="date">2017 12.19</span>
+								</div>
+								<div class="timeline-right">
+									<div class="amount">¥1120.00
+										<span>[已结清]</span>
+									</div>
+									<div class="amount-detail-money">
+										<div class="amount-bl">本金:¥1200.00</div>
+										<div class="amount-lf">违约金:¥0.00</div>
+									</div>
+									<div class="amount-detail-money record-clear">
+										<div class="amount-bl">利息:¥120.00</div>
+										<div class="amount-lf">服务费:¥0.00</div>
+									</div>
+								</div>
+							</div>
+							<div class="timeline">
+								<div class="timeline-left">
+									<div class="xian"></div>
+									<div class="time"></div>
+									<span class="date">2017 12.19</span>
+								</div>
+								<div class="timeline-right">
+									<div class="amount">¥1120.00
+										<span>[已结清]</span>
+									</div>
+									<div class="amount-detail-money">
+										<div class="amount-bl">本金:¥1200.00</div>
+										<div class="amount-lf">违约金:¥0.00</div>
+									</div>
+									<div class="amount-detail-money record-clear">
+										<div class="amount-bl">利息:¥120.00</div>
+										<div class="amount-lf">服务费:¥0.00</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/comm.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function () {
+			    COM.biz.setImmersed();
+			})
+		</script>
+	</body>
+
+</html>

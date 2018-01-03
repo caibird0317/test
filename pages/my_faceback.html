@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mui.poppicker.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/reset.mui.css"/>
+		<style type="text/css">
+			.faceback-reason{
+				display:inline-block;
+				width:80%;
+				font-size: 15px;
+				color: #E23C26;
+				text-align:right;
+			}
+			.mui-scroll{
+				padding: 0px 15px;
+			}
+			#facebackList.mui-row{
+				background: white;
+				height: 44px;
+				line-height: 44px;
+				font-size: 15px;
+				color: #333333;
+			}
+			.faceback-tips{
+				padding: 10px 0px;
+				font-size: 13px;
+				color: #888888;
+			}
+			.faceback-add-pic{
+				height: 80px;
+				border: 1px dashed #999999;
+				text-align: center;
+			}
+			.faceback-add-img{
+				padding: 10px;
+			}
+			.faceback-add-img div{
+				color: #999999;
+				font-size: 9px;
+			}
+			
+			.faceback-footer{
+				margin-top: 70%;
+				width: 100%;
+				text-align: center;
+				font-size: 12px;
+				color: #888888;
+			}
+			.faceback-button{
+				width: 90%;
+				margin: 0% 5%;
+				background: #E23C26;
+				border-radius: 4px;
+				font-size: 18px;
+				color: #FFFFFF;
+				margin-bottom: 8%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></a>
+		    <h1 class="mui-title">意见反馈</h1>
+		</header>
+		<div class="mui-content mui-scroll-wrapper" id="muiContent">
+			<div class="mui-scroll">
+				<div class="mui-row" id="facebackList">
+					<div class="mui-col-sm-4 mui-col-xs-4">反馈类别</div>
+					<div class="mui-col-sm-8 mui-col-xs-8">
+						<div class="faceback-reason" id="facebackReason"></div>
+						<span class="mui-icon mui-icon-arrowright" style="float: right;margin-top: 8px;"></span>
+					</div>
+				</div>
+				<div class="faceback-tips">补充更多信息以使我们更快帮您处理(必填)</div>
+				<div>
+					<textarea name="" rows="4" cols="50" placeholder="请输入"></textarea>
+				</div>
+				<div class="faceback-add-pic">
+					<div class="faceback-add-img">
+						<img src="../images/my_plus.png"/>
+						<div>添加图片（非必填）</div>
+					</div>
+					
+				</div>
+				
+		    	<div class="faceback-footer">
+		    		<button class="faceback-button" id="facebackCommit">提交</button>
+					<div>本服务由百城急用钱提供支持</div>
+		    	</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function () {			    
+				COM.biz.setImmersed()
+			})
+			var facebackReason = document.getElementById("facebackReason");
+			var picker = new mui.PopPicker();
+			picker.setData([
+				{
+					value: '1',
+					text: '就是不满意'
+				},
+				
+				{
+					value: '2',
+					text: '需要理由吗'
+				},
+				{
+					value: '3',
+					text: '你猜'
+				}
+			]);
+			mui('#muiContent').on('tap','#facebackList',function(){
+				picker.show(function(items) {
+					facebackReason.innerText = items[0]['text'];
+				});
+			})
+		</script>
+	</body>
+
+</html>

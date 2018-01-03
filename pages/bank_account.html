@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>银行信息</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mui.poppicker.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/reset.mui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/comm.css">
+		<style type="text/css">
+			.bank-info{
+				width: 100%;
+				background: #FFFFFF;
+			}
+			.bank-input{
+				background: #FFFFFF;
+				margin-left: 12px;
+				position: relative;
+				border-bottom: 1px solid #e5e5e5;
+				height: 45px;
+			}
+			.bank-input input,
+			.bank-input div
+			 {
+				height: 44px;
+				line-height: 44px;
+				padding-left: 0px;
+				margin-bottom: 0px;
+				border: none;
+				font-size: 15px;
+				color: #333333;
+			}
+			.bank-input input{
+				max-width: 80%;
+				width: 80%;
+				padding-left: 15px;
+				color: #888888;
+			}
+			.bank-input span.mui-icon-arrowright{
+				padding-top: 10px;
+				color: #888888;
+			}
+			.bank-tips{
+				font-size: 13px;
+				color: #888888;
+				line-height: 44px;
+				padding-left: 12px;
+			}
+			.bottom0{
+				border-bottom: 0px;
+			}
+			.text-r{
+				text-align: right;
+			}
+			.bank-footer{
+				width: 90%;
+				font-size: 12px;
+				text-align: center;
+				color: #888888;
+				position: absolute;
+			    left: 5%;
+			    bottom: 10%;
+			}
+			
+			.bank-button {
+				height: 44px;
+				width: 100%;
+				background: #E5E5E5;
+				border-radius: 4px;
+				font-size: 18px;
+				color: #BBBBBB;
+				border: 0px;
+			}
+			.true{
+				background: #E23C26;
+				color: #FFFFFF;
+			}
+			.bank-bc{
+				font-size: 12px;
+				color: #888888;
+				position: fixed;
+				width: 100%;
+				text-align:center;
+				bottom: 2%;
+			}
+			.red{
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></a>
+		    <h1 class="mui-title">银行账号</h1>
+			<span class="mui-pull-right mui-pull-right id-unauthorized">
+		    	
+		    </span>
+		</header>
+		<div class="mui-content" id="muiContent">
+			<div class="bank-tips">
+				借款账号信息（通过该账号收款）
+			</div>
+			<div class="bank-info">
+				<div class="bank-input mui-clearfix">
+					<div class="mui-pull-left width80">户名</div>
+					<input type="text" class="mui-pull-left" placeholder="请输入收款人户名" />
+				</div>
+				<div class="bank-input mui-clearfix">
+					<div class="mui-pull-left width80">账号</div>
+					<input type="text" class="mui-pull-left" placeholder="请输入收款账号" />
+				</div>
+				<div class="bank-input mui-clearfix bottom0" id="borrBank">
+					<div class="mui-pull-left width80">银行</div>
+					<input type="text" class="mui-pull-left text-r" id="borrBankValue" placeholder="选择银行" readonly="readonly" />
+					<span class="mui-icon mui-icon-arrowright"></span>
+				</div>
+			</div>
+			
+			<div class="bank-tips">
+				还款账号信息（通过该账号还款）
+			</div>
+			<div class="bank-info">
+				<div class="bank-input mui-clearfix">
+					<div class="mui-pull-left width80">户名</div>
+					<input type="text" class="mui-pull-left" placeholder="请输入还款人户名" />
+				</div>
+				<div class="bank-input mui-clearfix">
+					<div class="mui-pull-left width80">账号</div>
+					<input type="text" class="mui-pull-left" placeholder="请输入还款账号" />
+				</div>
+				<div class="bank-input mui-clearfix bottom0" id="reBank">
+					<div class="mui-pull-left width80">银行</div>
+					<input type="text" class="mui-pull-left text-r" id='reBankValue' placeholder="选择银行" readonly="readonly" />
+					<span class="mui-icon mui-icon-arrowright"></span>
+				</div>
+			</div>
+			
+			<div class="bank-footer">
+				<button class="bank-button button-red true" id="confirm">确定</button>
+			</div>
+			<div class="bank-bc">
+				本服务由百城急用钱提供支持
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function () {
+			    COM.biz.setImmersed();
+			    
+				document.getElementById("confirm").addEventListener("tap",function(){
+					
+					// 异步成功后关闭当前的窗口
+					plus.webview.close(plus.webview.currentWebview());
+				})
+			});
+			var borrBank = document.getElementById("borrBank");
+			var borrBankValue = document.getElementById("borrBankValue");
+			
+			var reBankValue = document.getElementById("reBankValue");
+			var reBank = document.getElementById("reBank");
+			var picker = new mui.PopPicker();
+			picker.setData([
+				{
+					value: '招商银行',
+					text: '招商银行'
+				},
+				
+				{
+					value: '工商银行',
+					text: '工商银行'
+				},
+				{
+					value: '平安银行',
+					text: '平安银行'
+				},
+				{
+					value: '建设银行',
+					text: '建设银行'
+				},
+				{
+					value: '其他',
+					text: '其他'
+				}
+			]);
+			// 借款银行
+			borrBank.addEventListener('tap',function(){
+				picker.show(function(items) {
+					borrBankValue.value = items[0]['text'];
+				});
+			})
+			
+			// 还款银行
+			reBank.addEventListener('tap',function(){
+				picker.show(function(items) {
+					reBankValue.value = items[0]['text'];
+				});
+			});
+		</script>
+	</body>
+
+</html>

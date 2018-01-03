@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.mui.css"/>
+		<style type="text/css">
+			.find-list{
+				left: 4%;
+				width: 92%;
+				margin-top: 10px;
+				padding: 0 4%;
+				width: 100%;
+			}
+			.find-content{
+				background: white;
+				box-shadow: 0 5px 10px 0 
+				border-radius: 4px;
+				padding:0px 4% 3% 4%;
+			}
+			.find-title{
+				font-size: 15px;
+				color: #333333;
+ 				line-height: 42px;
+ 				border-bottom:1px solid #dddddd;
+ 				margin-bottom: 10px;
+			}
+			.find-banner{
+				padding: 5px 0;
+				width: 100%;
+				height: 100%;
+			}
+			.find-banner img{
+				width: 100%;
+				border-radius: 4px;
+			}
+			.find-tips{
+				font-size: 12px;
+				color: #666666;
+				line-height: 20px;
+			}
+			.find-date{
+				text-align: center;
+				font-size: 13px;
+				margin-top: 15px;
+				color: #999999;
+				margin-bottom: 15px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></a>
+		    <h1 class="mui-title">系统公告</h1>
+		</header>
+		<div class="mui-content mui-scroll-wrapper" id="muiContent">
+			<div class="mui-scroll">
+				<div class="find-list">
+					<div class="find-content">
+						<div class="find-title">系统消息1</div>
+						<div class="find-tips">
+							你是否时常感觉工作时间不够？
+							原有的事情完不成，又有新的任务下达？
+							你是否永远因为解决紧急的突发事件推迟了本有的工作，
+							导致本有的工作完不成？
+						</div>
+					</div>
+					<div class="find-date">2017-12-23</div>
+				</div>
+				<div class="find-list">
+					<div class="find-content">
+						<div class="find-title">系统消息1</div>
+						<div class="find-tips">
+							你是否时常感觉工作时间不够？
+							原有的事情完不成，又有新的任务下达？
+							你是否永远因为解决紧急的突发事件推迟了本有的工作，
+							导致本有的工作完不成？
+						</div>
+					</div>
+					<div class="find-date">2017-12-23</div>
+				</div>
+				
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function () {			    
+				COM.biz.setImmersed()
+			})
+			mui('#muiContent').on('tap','.find-list',function(){
+				mui.openWindow({
+					url: "my_syslist_detail.html",
+					id: "my_syslist_detail.html"
+				})
+			})
+		</script>
+	</body>
+
+</html>

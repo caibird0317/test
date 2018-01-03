@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/reset.mui.css" />
+		<style type="text/css">
+			html,
+			body,
+			.mui-content{
+				background-color: #ffffff;
+			}
+			.mui-content {
+				padding: 0 4%;
+				margin-top: 10px;
+			}
+			
+			.reg-tips {
+				font-size: 13px;
+				color: #888888;
+				margin: 6px 0px;
+			}
+			
+			.reg-input input,
+			.reg-input div
+			 {
+				height: 44px;
+				line-height: 44px;
+				padding-left: 0px;
+				margin-bottom: 0px;
+				border: none;
+				font-size: 15px;
+				color: #333333;
+			}
+			.reg-input input{
+				max-width: 70%;
+				width: 50%;
+				padding-left: 15px;
+			}
+			.margin-t-30 {
+				margin-top: 30px;
+			}
+			.check-code {
+				padding: 0;
+				font-size: 15px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				background: #FFFFFF;
+				border: 1px solid #E23C26;
+				border-radius: 3px;
+				color: #E23C26;
+			}
+			.reg-footer{
+				/*position: mar;
+				bottom: 20px;*/
+				margin-top: 30px;
+				width: 100%;
+				font-size: 12px;
+				text-align: center;
+				color: #888888;
+			}
+			
+			.reg-button {
+				height: 44px;
+				width: 90%;
+				margin: 0% 5%;
+				background: #E23C26;
+				border-radius: 4px;
+				font-size: 18px;
+				color: #FFFFFF;
+				margin-bottom: 8%;
+			}
+			.mui-checkbox.mui-left label{
+			    padding-top: 10px;
+				padding-left: 25px;
+			}
+			.mui-checkbox label{
+				width: auto;
+				font-size: 15px;
+			}
+			.mui-checkbox input[type=checkbox]:before{
+				font-size: 22px;
+			}
+			.mui-checkbox.mui-left input[type=checkbox]{
+				left: 2px;
+				top: 10px;
+			}
+			.mui-checkbox input[type=checkbox]:checked:before{
+				color: #09BB07;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left">
+				<span class="mui-icon mui-icon-left-nav"></span>
+				<span>返回</span>
+			</a>
+			<h1 class="mui-title">注册</h1>
+		</header>
+		<div class="mui-content" id="muiContent">
+			<div class="reg-tips">
+				必填，请输人本人手机号码
+			</div>
+			<div class="reg-input mui-clearfix">
+				<div class="mui-pull-left">手机号码</div>
+				<input type="text" class="mui-pull-left" placeholder="请输入手机号码" />
+			</div>
+			<div class="reg-tips">
+				必填，6-12位数字字母组合
+			</div>
+			<div class="reg-input mui-clearfix">
+				<div class="mui-pull-left">密码</div>
+				<input type="text" class="mui-pull-left" placeholder="请输入密码" />
+			</div>
+			<div class="reg-input mui-clearfix">
+				<div class="mui-pull-left">确认密码</div>
+				<input type="text" class="mui-pull-left" placeholder="请再次确认密码" />
+			</div>
+			<div class="reg-input  mui-clearfix margin-t-30">
+				<div class="mui-pull-left">推荐人手机号</div>
+				<input type="text" class="mui-pull-left" style="" placeholder="请输入推荐人手机号" />
+			</div>
+			<div class="reg-input mui-clearfix">
+				<div class="mui-pull-left">代理人手机号</div>
+				<input type="text" class="mui-pull-left" placeholder="请输入代理人手机号" />
+			</div>
+			<div class="reg-input mui-clearfix">
+				<div class="mui-pull-left">验证码</div>
+				<input type="nunber" style="width: 40%; float: left" id="checkCode" placeholder="填写验证码" />
+				<button class="check-code" style="width: 40%;float: left;">获取验证码</button>
+			</div>
+			<div class="reg-tips">
+				<div class="mui-checkbox mui-left">
+				  <label>已阅读并同意</label><span style="margin-left: -15px;"><a>《用户服务协议》</a></span>
+				  <input name="checkbox1" value="" type="checkbox" checked ='checked'>
+				  
+				</div>
+				<!--<span style="color: #09BB07;">√</span>
+				<span>已阅读并同意<a href="#">《用户服务协议》</a></span>-->
+			</div>
+			<div class="reg-footer">
+				
+				<button class="reg-button button-red" id="regCommit">提交</button>
+				<div class="">
+					本服务由百城急用钱提供支持	
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/jquery/jquery-1.10.2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ListenerMsg.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var checkCode = document.getElementById("checkCode");
+			mui.plusReady(function() {
+				COM.biz.setImmersed();
+				
+				mui("#regCommit")[0].addEventListener("tap",function(){
+					// 异步成功后关闭当前的窗口
+					plus.webview.close(plus.webview.currentWebview());
+					
+					// 注销短信监听
+					unregister(handleSMS)
+				});
+			})
+			$(".check-code").on("click",function(){
+				COM.biz.createCountDown(".check-code");
+			})
+			
+			var codeRegex = /[0-9]{6}/g;
+			var handleSMS = function(msgs) {
+				console.log(JSON.stringify(msgs))
+				for(var i = 0, len = msgs.length; i < len; i++) {
+					var content = msgs[i].getDisplayMessageBody();
+					console.log(JSON.stringify(content));
+					checkCode.val(content);
+				}
+			};
+
+			//登录页面注册短信监听事件
+			register(handleSMS);
+		</script>
+	</body>
+
+</html>

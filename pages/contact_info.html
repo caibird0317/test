@@ -1,0 +1,447 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>联系人信息</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.mui.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mui.poppicker.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/comm.css">
+		<style type="text/css">
+			.id-unauthorized {
+				font-size: 15px;
+				line-height: 44px;
+			}
+			
+			.id-progress-one {
+				width: 10%;
+			}
+			
+			.id-progress-two {
+				width: 36.7%;
+			}
+			
+			.id-progress-three {
+				width: 63.4%;
+			}
+			
+			.id-progress-foue {
+				width: 90%;
+			}
+			
+			.id-progress-name {
+				margin-top: 30px;
+				display: block;
+				width: 50px;
+				margin-left: -12px;
+			}
+			
+			.id-progress {
+				width: 100%;
+				height: 88px;
+				background: #FFFFFF;
+			}
+			
+			.id-progress-lxr {
+				margin-top: 30px;
+				display: block;
+				width: 70px;
+				margin-left: -20px;
+			}
+			
+			.contact-info {
+				width: 100%;
+				background: #FFFFFF;
+			}
+			
+			.contact-input {
+				background: #FFFFFF;
+				margin-left: 12px;
+				position: relative;
+				border-bottom: 1px solid #e5e5e5;
+				height: 45px;
+			}
+			
+			.contact-input input,
+			.contact-input div {
+				height: 44px;
+				line-height: 44px;
+				padding-left: 0px;
+				margin-bottom: 0px;
+				border: none;
+				font-size: 15px;
+				color: #333333;
+			}
+			
+			.contact-input input {
+				max-width: 65%;
+				width: 65%;
+				padding-left: 15px;
+				color: #888888;
+			}
+			.contact-input span.mui-icon-arrowright{
+				padding-top: 10px;
+				color: #888888;
+			}
+			
+			.contact-tips {
+				font-size: 13px;
+				color: #888888;
+				line-height: 44px;
+				padding-left: 12px;
+			}
+			
+			.contact-footer {
+				width: 90%;
+				font-size: 12px;
+				text-align: center;
+				color: #888888;
+				margin: 0 auto;
+				margin-top: 20px;
+			}
+			
+			.contact-button {
+				height: 44px;
+				width: 100%;
+				background: #E5E5E5;
+				border-radius: 4px;
+				font-size: 18px;
+				color: #BBBBBB;
+				border: 0px;
+			}
+			
+			.next {
+				background: #E23C26;
+				color: #FFFFFF;
+			}
+			
+			.contact-bc {
+				font-size: 12px;
+				color: #888888;
+				position: fixed;
+				width: 100%;
+				text-align: center;
+				bottom: 2%;
+			}
+			
+			.red {
+				color: red;
+			}
+			
+			.width80 {
+				width: 80px;
+			}
+			
+			.contact-people:before,
+			.contact-emergency-people:before {
+				position: absolute;
+				content: '';
+				display: inline-block;
+				height: 25px;
+				width: 25px;
+				top: 8px;
+				right: 0;
+				margin-right: 10px;
+				background-image: url(../images/tile1.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			
+			.contact-gx:after {
+				font-size: inherit;
+				line-height: 1;
+				position: absolute;
+				top: 50%;
+				display: inline-block;
+				right: 15px;
+				content: '\e583';
+				transform: translateY(-50%);
+				text-decoration: none;
+				color: #bbb;
+				-webkit-font-smoothing: antialiased;
+			}
+			
+			.bottom0 {
+				border-bottom: 0px;
+			}
+			
+			.mui-indexed-list {
+				position: fixed;
+				top: 30px;
+				width: 100%;
+				z-index: 10;
+				background: #d7d7d7;
+				margin: 0px;
+			}
+			
+			#contactBody {
+				background: white;
+				margin-top: 60px;
+			}
+			
+			.contact-Container {
+				z-index: 1000;
+			}
+			
+			.mui-indexed-list .mui-indexed-list-search .mui-input-row .mui-search {
+				height: 35px;
+			}
+			
+			#list .mui-indexed-list-search-input {
+				margin: 0px;
+			}
+			
+			.mui-indexed-list .mui-search:before {
+				margin-top: -11px;
+			}
+			
+			.hide {
+				display: none;
+			}
+			
+			.search-tips {
+				margin-top: 10px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></a>
+			<h1 class="mui-title">联系人信息</h1>
+			<span class="mui-pull-right mui-pull-right id-unauthorized">
+		    	未认证
+		    </span>
+		</header>
+		<div class="mui-content" id="muiContent">
+			<div class="id-progress">
+				<div class="bc-progress-steps">
+					<div class="progress">
+						<div class="dot w0 over"><span class="id-progress-name">身份信息</span></div>
+						<div class="dot w33"><span class="id-progress-lxr red">联系人信息</span></div>
+						<div class="dot w66 uncheck"><span class="id-progress-name">单位信息</span></div>
+						<div class="dot w100 uncheck"><span class="id-progress-name">更多资料</span></div>
+						<div class="progress-bar id-progress-two"></div>
+					</div>
+				</div>
+			</div>
+			<div class="contact-tips">
+				选择联系人，带出手机号码
+			</div>
+			<div class="contact-info">
+				<div class="contact-input mui-clearfix contact-people">
+					<div class="mui-pull-left width80">常用联系人</div>
+					<input type="text" class="mui-pull-left user-contact" placeholder="请选择常用联系人" id="nomalPhone" readonly="readonly" />
+				</div>
+				<div class="contact-input mui-clearfix" id="chosePhone">
+					<div class="mui-pull-left width80">手机号码</div>
+					<input type="text" class="mui-pull-left" placeholder="请选择联系人电话" id="nomalPhoneNumber" readonly="readonly"/>
+				</div>
+				<div class="contact-input mui-clearfix contact-gx bottom0">
+					<div class="mui-pull-left width80">关系</div>
+					<input type="text" class="mui-pull-left contact-relation" placeholder="请选择关系" readonly="readonly"/>
+					<span class="mui-icon mui-icon-arrowright"></span>
+				</div>
+			</div>
+
+			<div class="contact-info">
+				<div class="contact-input mui-clearfix contact-people" style="margin-top: 10px;">
+					<div class="mui-pull-left width80">紧急联系人</div>
+					<input type="text" class="mui-pull-left user-contact" placeholder="请选择常用联系人" id="urgentContact" readonly="readonly"/>
+				</div>
+				<div class="contact-input mui-clearfix">
+					<div class="mui-pull-left width80">手机号码</div>
+					<input type="text" class="mui-pull-left" placeholder="请选择联系人电话" id="urgentContactNumber" readonly="readonly"/>
+				</div>
+				<div class="contact-input mui-clearfix contact-gx bottom0">
+					<div class="mui-pull-left width80">关系</div>
+					<input type="text" class="mui-pull-left contact-relation" placeholder="请选择关系" readonly="readonly"/>
+					<span class="mui-icon mui-icon-arrowright"></span>
+				</div>
+			</div>
+
+			<div class="contact-footer">
+				<button class="contact-button button-red next" id="nextPagge">下一步</button>
+			</div>
+			<div class="contact-bc">
+				本服务由百城急用钱提供支持
+			</div>
+			<!--弹出层-->
+			<div class="contact-Container mui-fullscreen hide" id="contactContainer" source="">
+				<div id='list' class="mui-indexed-list">
+					<div class="mui-indexed-list-search mui-input-row mui-search">
+						<input type="search" id="searchContact" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索联系人">
+					</div>
+
+				</div>
+				<div class="mui-scroll-wrapper mui-fullscreen" id="contactBody">
+					<div class="mui-scroll">
+						<!--这里放置真实显示的DOM内容-->
+						<ul class="mui-table-view" id="contactList">
+
+						</ul>
+						<div class="search-tips hide" id="searchTips">
+							<span>暂未找到符合的结果!</span>
+							<div style="margin-top: 100px;">
+								<button id="closeContactWindow">关闭当前窗口</button>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui('.mui-scroll-wrapper').scroll({
+				deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+			});
+			var contactList = document.getElementById("contactList");
+			var searchContact = document.getElementById('searchContact')
+			var searchTips = document.getElementById("searchTips");
+			var contactContainer = document.getElementById("contactContainer");
+			mui.plusReady(function() {
+				COM.biz.setImmersed();
+
+				// 扩展API加载完毕，现在可以正常调用扩展API
+				plus.contacts.getAddressBook(plus.contacts.ADDRESSBOOK_PHONE, function(addressbook) { //获取通讯录信息
+					var arr = [];
+					addressbook.find(null, function(contacts) {
+						mui.each(contacts, function(i, o) {
+							if(o['phoneNumbers'].length) {
+								arr.push([
+									'<li class="mui-table-view-cell user-list" data-username="', o['displayName'], '" data-phone="', o['phoneNumbers'][0]["value"], '">',
+									'<div class="display-name">', o['displayName'], '</div>',
+									'<div class="mui-navigate-right">', o['phoneNumbers'][0]["value"], '</div>',
+									'</li>'
+								].join(""));
+							}
+						})
+						if(contacts==""|| contacts ==null || contacts==undefined){
+							searchTips.classList.remove('hide');
+						}else{
+							searchTips.classList.add('hide');
+						}
+						contactList.innerHTML = arr.join("");
+					}, function(e) {
+						console.log("Find contact error: " + e.message);
+					});
+
+				}, function(e) {
+					console.log("Find contact error: " + e.message);
+				});
+			});
+			
+			var picker = new mui.PopPicker();
+			picker.setData([
+				{
+					value: '1',
+					text: '父母'
+				},
+				
+				{
+					value: '2',
+					text: '兄弟姐妹'
+				},
+				{
+					value: '3',
+					text: '朋友'
+				},
+				{
+					value: '4',
+					text: '其他'
+				}
+			]);
+			// 关系选择
+			mui("#muiContent").on('tap','.contact-relation',function(){
+				var self = this
+				picker.show(function(items) {
+					self.value = items[0]['text'];
+				});
+			})
+			
+			//下一步
+			document.getElementById("nextPagge").addEventListener('tap', function() {
+				mui.openWindow({
+					url: "unit_info.html",
+					id: "unit_info.html"
+				})
+			});
+			document.getElementById("closeContactWindow").addEventListener('tap',function(){
+				contactContainer.classList.add("hide")
+				resetContact();
+				
+			})
+			// 关联通讯用户信息
+			mui('#muiContent').on('tap','.user-contact',function(){
+				contactContainer.setAttribute('source',this.getAttribute('id'))
+				contactContainer.classList.remove("hide");
+			});
+			// 选择通讯录的联系人
+			mui("#contactList").on('tap','.user-list',function(){
+				var user = this.getAttribute('data-username');
+				var phone = this.getAttribute('data-phone');
+				var userBody = contactContainer.getAttribute('source');
+				var userNumber = userBody+"Number";
+//				mui.toast(user+"  "+phone)
+				document.getElementById(userBody).value = user;
+				document.getElementById(userNumber).value = phone;
+				contactContainer.classList.add('hide');
+			})
+			
+			// 函数节流 TODO 后面优化下按键在安卓上没有持续触犯的问题
+			searchContact.addEventListener("keypress", function() {
+				COM.biz.throttle(searchUser, 500);
+			});
+			/**
+			 *@description 初始化通讯录窗口 
+			 */
+			function resetContact(){
+				var noData = true;
+				mui.each(mui("#contactList .mui-table-view-cell"), function() {
+					if(this.getAttribute('data-username')!==""){
+						noData = false
+					}
+					this.classList.remove('hide');
+				})
+				if(!noData){
+					searchTips.classList.add('hide');
+				}
+			}
+			// 筛选联系人
+			function searchUser() {
+				var inputValue = searchContact.value;
+				mui('.mui-scroll-wrapper').scroll().scrollTo(0, 0, 100);
+				var allNull = true;
+				if(inputValue == "" || inputValue == null) {
+					resetContact()
+				} else {
+					mui.each(mui("#contactList .mui-table-view-cell"), function() {
+						var cur = this.getAttribute('data-username');
+						if(cur.indexOf(inputValue) == -1) {
+							this.classList.add('hide')
+						} else {
+							this.classList.remove('hide');
+							allNull = false;
+						}
+					});
+					if(allNull) {
+						searchTips.classList.remove('hide');
+					} else {
+						searchTips.classList.add('hide');
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.mui.css"/>
+		<style type="text/css">
+			.reset-tips{
+				font-size: 13px;
+				color: #888888;
+				padding: 8px 12px;
+			}
+			.reset-ul{
+				margin: 0px;
+				padding: 5px 0px 5px 10px;
+				list-style-type: none;
+				background: #ffffff;
+			}
+			.reset-ul>li{
+				border-bottom:1px solid #E5E5E5;
+			}
+			.reset-ul>li div{
+				font-size: 15px;
+				color: #333333;
+				width: 25%;
+				float: left;
+				line-height: 45px;
+			}
+			.reset-ul>li input{
+			    width: 75%;
+			    float: left;			    
+				font-size: 15px;
+			    height: 45px;
+			    margin: 0px;
+			    border: none;
+			}
+			.reset-footer{
+				margin-top: 70%;
+				width: 100%;
+				text-align: center;
+				font-size: 12px;
+				color: #888888;
+			}
+			.reset-button{
+				width: 90%;
+				margin: 0% 5%;
+				background: #E23C26;
+				border-radius: 4px;
+				font-size: 18px;
+				color: #FFFFFF;
+				margin-bottom: 8%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></a>
+		    <h1 class="mui-title">修改密码</h1>
+		</header>
+		<div class="mui-content mui-scroll-wrapper" id="muiContent">
+		    <div class="mui-scroll">
+		    	<div class="reset-tips">6-12位数字字母组合</div>
+		    	<ul class="reset-ul">
+		    		<li class="mui-clearfix">
+		    			<div>旧密码:</div>
+		    			<input type="password" placeholder="您现在的密码" id="oldPwd"/>
+		    		</li>
+		    		<li class="mui-clearfix">
+		    			<div>新密码:</div>
+		    			<input type="password" placeholder="6-12位数字字母组合" id="newPwd"/>
+		    		</li>
+		    		<li class="mui-clearfix">
+		    			<div>确认密码:</div>
+		    			<input type="password" placeholder="请再次输入一次密码" id="confirmPwd"/>
+		    		</li>
+		    	</ul>
+		    	<div class="reset-footer">
+		    		<button class="reset-button" id="resetCommit">提交</button>
+					<div>本服务由百城急用钱提供支持</div>
+		    	</div>
+		    </div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function () {
+			    COM.biz.setImmersed();
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.mui.css" />
+		<style type="text/css">
+			/*重置导航的阴影*/			
+			#header.mui-bar-nav {
+				-webkit-box-shadow: 0px 0px 0px #ccc;
+				box-shadow: 0px 0px 0px #ccc;
+			}
+			.message-tips-dot {
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				width: 8px;
+				height: 8px;
+				z-index: 2;
+				background: #ffff00;
+				border-radius: 50%;
+			}
+			.home-logo {
+				text-align: center;
+				margin-top: 2px;
+			}
+			
+			.home-logo img {
+				width: 142px;
+				height: 100%;
+			}
+			
+			#muiContent {
+				background: url(../images/home_bg.png) no-repeat;
+				background-size: 100% 220px;
+			}
+			
+			.home-scroll-message {
+				width: 80%;
+				left: 10%;
+				border: none;
+				border-radius: 4px;
+			}
+			
+			.home-scroll-message {
+				position: absolute;
+				top: 198px;
+				z-index: 1;
+				height: 44px;
+				line-height: 44px;
+				text-align: center;
+				display: inline-block;
+				background-color: #ffffff;
+				font-size: 14px;
+				color: #888888;
+			}
+			
+			.home-menu {
+				position: absolute;
+				top: 252px;
+				width: 80%;
+				margin: 0;
+				padding: 0;
+				left: 10%;
+			}
+			
+			.home-menu-list {
+				list-style-type: none;
+				background-color: #FFFFFF;
+				height: 70px;
+				border-radius: 4px;
+				padding: 0px 10px;
+			}
+			
+			.home-menu-link {
+				display: inline-block;
+				width: 100%;
+				height: 100%;
+			}
+			
+			a.home-menu-link div {
+				padding-left: 12px;
+				line-height: 70px;
+				font-size: 17px;
+				color: #333333;
+			}
+			
+			a.home-menu-link span {
+				display: inline-block;
+				color: #DDDDDD;
+				line-height: 70px;
+				padding-right: 16px;
+			}
+			
+			a.home-menu-link img {
+				height: 100%;
+				padding: 10px;
+			}
+			
+			li.home-menu-list+li.home-menu-list {
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-bar-transparent" id="header">
+			<span class="mui-icon mui-icon-bars mui-pull-left"></span>
+			<span class="mui-icon mui-icon-email mui-pull-right mui-pull-right" style="font-size:200%;line-height: 25px;">
+		    	<span id="ureadTips" class="message-tips-dot"></span>
+			</span>
+		</header>
+		<div class="mui-content mui-fullscreen" id="muiContent">
+			<div class="home-logo">
+				<img src="../images/logo_icon.png" />
+			</div>
+			<div class="home-scroll-message" id="homeMessage">
+				<span>百城贷小额贷款0门槛30分钟到账</span>
+			</div>
+			<ul class="home-menu">
+				<li class="home-menu-list mui-clearfix">
+					<a class="home-menu-link" id="applyMoney">
+						<img class="mui-pull-left" src="../images/home_money.png" />
+						<div class="mui-pull-left">申请贷款</div>
+						<span class="mui-icon mui-icon-arrowright mui-pull-right"></span>
+					</a>
+				</li>
+				<li class="home-menu-list mui-clearfix">
+					<a class="home-menu-link" id="myBorrowedMoney">
+						<img class="mui-pull-left" src="../images/home_business.png" />
+						<div class="mui-pull-left">我的借款</div>
+						<span class="mui-icon mui-icon-arrowright mui-pull-right"></span>
+					</a>
+				</li>
+				<li class="home-menu-list mui-clearfix">
+					<a class="home-menu-link" id="repaymentRecord">
+						<img class="mui-pull-left" src="../images/home_onlineshop.png" />
+						<div class="mui-pull-left">还款记录</div>
+						<span class="mui-icon mui-icon-arrowright mui-pull-right"></span>
+					</a>
+				</li>
+				<li class="home-menu-list mui-clearfix">
+					<a class="home-menu-link" id="myCertification">
+						<img class="mui-pull-left" src="../images/home_contract.png" />
+						<div class="mui-pull-left">我的认证</div>
+						<span class="mui-icon mui-icon-arrowright mui-pull-right"></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			// 申请贷款
+			var applyMoney = document.getElementById("applyMoney");
+			// 我的借款
+			var myBorrowedMoney = document.getElementById("myBorrowedMoney");
+			// 还款记录
+			var repaymentRecord = document.getElementById("repaymentRecord");
+			// 我的认证
+			var myCertification = document.getElementById("myCertification");
+			var homeMessage = document.getElementById("homeMessage");
+			mui.init({
+				pullRefresh: {
+					container: "#muiContent", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+					down: {
+						style: 'circle', //必选，下拉刷新样式，目前支持原生5+ ‘circle’ 样式
+						color: '#E23C26', //可选，默认“#2BD009” 下拉刷新控件颜色
+						//						height: '50px', //可选,默认50px.下拉刷新控件的高度,
+						//						range: '100px', //可选 默认100px,控件可下拉拖拽的范围
+						offset: '60px', //可选 默认0px,下拉刷新控件的起始位置
+						//						auto: true, //可选,默认false.首次加载自动上拉刷新一次
+						callback: initPullfresh //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					}
+				}
+			});
+			mui.plusReady(function() {
+				
+				
+				COM.biz.setImmersed();
+			});
+
+			function initPullfresh() {
+				console.log("shouey下拉刷新了");
+				try {
+					mui('#muiContent').pullRefresh().endPulldown();
+				} catch(e) {
+					mui('#muiContent').pullRefresh().endPullupToRefresh()
+				}
+			}
+			// 申请贷款
+			applyMoney.addEventListener('tap',function(){
+				mui.openWindow({
+					url: "apply_borrowed.html",
+					id: "apply_borrowed.html"
+				})
+			});
+			// 我的借款
+			myBorrowedMoney.addEventListener('tap',function(){
+				mui.openWindow({
+					url: "my_borrowed.html",
+					id: "my_borrowed.html"
+				})
+			});
+			// 我的还款
+			repaymentRecord.addEventListener('tap',function(){
+				mui.openWindow({
+					url: "repayment_record.html",
+					id: "repayment_record.html"
+				})
+			});
+			// 认证信息
+			myCertification.addEventListener("tap",function(){
+				mui.openWindow({
+					url: "inactive.html",
+					id: "inactive.html"
+				})
+			})
+			//系统公告
+			homeMessage.addEventListener('tap',function(){
+				mui.openWindow({
+					url: "my_syslist.html",
+					id: "my_syslist.html"
+				})
+			})
+		</script>
+	</body>
+
+</html>

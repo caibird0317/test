@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			.login-container {
+				position: absolute;
+				top: 7.5%;
+				left: 5%;
+				z-index: 2;
+				width: 90%;
+			}
+			.login-container-input{
+				height: auto;
+				border: 1px solid #CCCCCC;
+				border-radius: 5px;
+				background-color: white;
+				font-size: 14px;
+			}
+			.login-input input {
+				height: 44px;
+				padding: 12px 0px 12px 11%;
+				font-size: 15px;
+				width: 90%;
+			}
+			.login-input span {
+				position: absolute;
+				left: 8%;
+				z-index: 10;
+				margin-top: 8px;
+			}
+			.login-footer {
+				position: absolute;
+				top: 94%;
+				width: 100%;
+				color: white;
+				font-size: 14px;
+			}
+			.login-button {
+				width: 90%;
+				height: 44px;
+				margin-top: 20px;
+				padding: 8px 0px;
+				border-radius: 4px;
+				font-size: 18px;
+			}
+			.login-button.button-red {
+				background: #E23C26;
+				color: white;
+			}
+			.login-button.button-gray {
+				background: #eeeeee;
+			}
+			.mui-switch.mui-active {
+				border-color: red;
+				background-color: red
+			}
+			.focus-active {
+				color: #E23C26;
+			}
+			.remark-tips {
+				font-size: 15px;
+				line-height: 28px;
+				margin-left: 10px;
+				color: #4a4a4a;
+				float: left;
+			}
+			.margin-bottom-20 {
+				margin-bottom: 20px;
+			}
+			.margin-t-20 {
+				margin-top: 20px;
+			}
+			.login-bg {
+				background-image: url(images/login_bg.png);
+				background-repeat: no-repeat;
+			    width:100%;  
+			    height:100%;  
+			    background-size:100% 100%; 
+			}
+			.login-logo {
+				text-align: center;
+				margin-bottom: 5%;
+			}
+			.login-logo img {
+				width: 165px;
+				height: 150px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content mui-fullscreen login-bg">
+			<div class="login-container mui-text-center">
+				<div class="login-logo">
+					<img src="images/logo_icon.png" />
+				</div>
+				<div class="login-container-input">
+					<div class="login-input margin-t-20">
+						<span class="mui-icon mui-icon-person"></span>
+						<input type="text" id="userName" placeholder="请输入用户名" />
+					</div>
+					<div class="login-input">
+						<span class="mui-icon mui-icon-locked"></span>
+						<input type="password" id="passWord" placeholder="请输入密码" />
+					</div>
+					<div class="login-switch mui-clearfix" style="margin-left: 5%;">
+						<div class="mui-switch mui-switch-mini mui-active" style="float: left;">
+							<div class="mui-switch-handle"></div>
+						</div>
+						<div class="remark-tips" style="">记住密码</div>
+					</div>
+					<div class="login-commit">
+						<button class="login-button button-red" id="loginCommit">登 录</button>
+					</div>
+					<div class="login-register margin-bottom-20">
+						<button class="login-button button-gray" id="loginRegister">注 册</button>
+					</div>
+				</div>
+
+			</div>
+			<div class="login-footer mui-text-center">百城急用钱 版权所有</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/jquery/jquery-1.10.2.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.plusReady(function () {
+//			    COM.biz.closeWebView();
+			})
+			mui.init();
+			$(".login-input input").focus(function() {
+				$(this).prev("span.mui-icon").addClass("focus-active");
+			}).blur(function() {
+				$(this).prev("span.mui-icon").removeClass("focus-active");
+			});
+			document.getElementById("loginRegister").addEventListener("tap",function(){
+				mui.openWindow({
+					url:"reg.html",
+					id: "reg.html"
+				})
+			})
+			document.getElementById("loginCommit").addEventListener("tap",function(){
+				mui.openWindow({
+					url:"pages/comm.html",
+					id: "comm.html"
+				})
+			})
+		</script>
+	</body>
+
+</html>

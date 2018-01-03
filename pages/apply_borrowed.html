@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/reset.mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/comm.css">
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
+		<style type="text/css">
+			.apply-area-money {
+				font-size: 13px;
+				color: #888888;
+				padding-left: 12px;
+				line-height: 45px;
+			}
+			
+			.loan-amount,
+			.revert-money-date,
+			.mortgage-description,
+			input.loan-amount-input {
+				height: 45px;
+				line-height: 45px;
+				font-size: 15px;
+				color: #333333;
+				width: 35%;
+				margin-left: 12px;
+			}
+			
+			.loan-amount:before,
+			.revert-money-date:before,
+			.mortgage-description:before {
+				position: relative;
+				content: '';
+				display: inline-block;
+				height: 20px;
+				width: 20px;
+				top: 6px;
+				margin-right: 10px;
+				background-image: url(../images/loan_amount_icon.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			
+			.revert-money-date:before {
+				background-image: url(../images/money_date_icon.png);
+			}
+			
+			.mortgage-description:before {
+				background-image: url(../images/mortgage_description_icon.png);
+			}
+			
+			input.loan-amount-input,
+			textarea.mortgage-description-input {
+				width: 50%;
+				border: none;
+				padding: 0px 5px;
+				margin-bottom: 0px;
+				font-weight: blod;
+				color: red;
+				line-height: 42px;
+				background-color: transparent;
+			}
+			textarea.mortgage-description-input{
+				width: 55%;
+				margin-top: 15px;
+				color: #888888;
+				font-size: 15px;
+				line-height: 18px;
+				height: 90px;
+			}
+			
+			.return-money-date {
+				height: 45px;
+				line-height: 45px;
+				width: 55%;
+				font-size: 15px;
+				color: #888888;
+			}
+			
+			.return-money-date span.mui-icon.mui-icon-arrowright {
+				line-height: 45px;
+				padding-right: 8%;
+			}
+			
+			.money-flag {
+				font-size: 15px;
+				width: 3%;
+				padding-top: 2px;
+				color: red;
+				letter-spacing: 0;
+				line-height: 42px;
+			}
+			.apply-footer{
+				position: absolute;
+				bottom: 4%;
+				left: 4%;
+				width: 92%;
+				z-index: 2;
+				text-align: center;
+			}
+			.apply-footer .apply-commit{
+				height: 44px;
+				line-height: 44px;
+				color: white;
+				font-size: 18px;
+				background: #E23C26;
+				border-radius: 4px;
+			}
+			.apply-footer .footer-tips{
+				margin-top: 12%;
+				font-size: 12px;
+				color: #888888;
+			}
+			.border-bottom{
+				border-bottom: 1px solid #e5e5e5;
+			}
+			.apply-content{
+				width: 100%;
+				background: #FFFFFF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></a>
+			<h1 class="mui-title">申请借款</h1>
+		</header>
+
+		<div class="mui-content" id="muiContent">
+			<div class="apply-area-money">
+				<span>可贷款额度范围：</span>
+				<span class="area-money-text">3000.00 - 20000.00</span>元
+			</div>
+			<div class="apply-content">
+				<div class="loan-money-container">
+					<div class="mui-clearfix border-bottom">
+						<!--贷款金额-->
+						<div class="loan-amount mui-pull-left">贷款金额</div>
+						<!--贷款数目-->
+						<div class="mui-pull-left money-flag">¥</div>
+						<input type="number" class="loan-amount-input mui-pull-left" />
+					</div>
+					<div class="mui-clearfix border-bottom">
+						<!--还款期限-->
+						<div class="revert-money-date mui-pull-left">还款期限</div>
+						<div class="mui-pull-left return-money-date" data-options='{"type":"date"}' id="returnMoneyDate">
+							<span id="returnMoneyDateValue">请选择还款期限</span><span class="mui-icon mui-icon-arrowright mui-pull-right"></span>
+						</div>
+					</div>
+					<div class=" mui-clearfix">
+						<!--贷款金额-->
+						<div class="mui-pull-left mortgage-description">抵押说明</div>
+						<!--贷款数目-->
+						<textarea type="text" placeholder="请填写抵押说明" class="mortgage-description-input mui-pull-left"></textarea>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="apply-footer">
+				<div class="apply-commit" id="applyCommit">提交</div>
+				<div class="footer-tips">本服务由百城急用钱提供支持</div>
+			</div>
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/comm.js"></script>
+
+		<script type="text/javascript">
+			mui.init();
+			// 提交
+			var applyCommit = document.getElementById("applyCommit");
+			// 日期触发
+			var returnMoneyDate = document.getElementById("returnMoneyDate");
+			// 日期容器
+			var returnMoneyDateValue = document.getElementById("returnMoneyDateValue");
+			mui.plusReady(function() {
+				COM.biz.setImmersed();
+			})
+			//数据提交
+			applyCommit.addEventListener('tap',function(){
+				//TODO 数据过滤
+				// 
+				mui.toast("申请已提交，请等候业务员联系");
+				mui.openWindow({
+					url:"my_borrowed.html",
+					id: "my_borrowed.html"
+				})
+			})
+			// 选择日期
+			returnMoneyDate.addEventListener('tap', function() {
+				var self = this;
+				var option = JSON.parse(this.getAttribute("data-options"));
+				self.picker = new mui.DtPicker(option);
+				self.picker.show(function(rs) {
+					/*
+					 * rs.value 拼合后的 value
+					 * rs.text 拼合后的 text
+					 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+					 * rs.m 月，用法同年
+					 * rs.d 日，用法同年
+					 * rs.h 时，用法同年
+					 * rs.i 分（minutes 的第二个字母），用法同年
+					 */
+					returnMoneyDateValue.innerText = rs.text;
+					/* 
+					 * 返回 false 可以阻止选择框的关闭
+					 * return false;
+					 */
+					/*
+					 * 释放组件资源，释放后将将不能再操作组件
+					 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+					 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+					 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+					 */
+					self.picker.dispose();
+					self.picker = null;
+				});
+			})
+			
+		</script>
+	</body>
+
+</html>

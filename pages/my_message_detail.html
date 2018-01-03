@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.mui.css"/>
+		<style type="text/css">
+			.find-list{
+				left: 4%;
+				width: 92%;
+				margin-top: 10px;
+				padding: 0 4%;
+				width: 100%;
+			}
+			.find-content{
+				background: white;
+				box-shadow: 0 5px 10px 0 
+				border-radius: 4px;
+				padding:0px 4% 3% 4%;
+			}
+			.find-title{
+				font-size: 13px;
+				color: #999999;
+ 				line-height: 42px;
+ 				border-bottom:1px solid #dddddd;
+ 				margin-bottom: 10px;
+			}
+			.find-tips,
+			.find-money-detail,
+			.find-money-date{
+				padding: 15px 0px;
+				font-size: 14px;
+				color: #666666;
+				line-height: 42px;
+			}
+			.find-title-message{
+				text-align: center;
+				font-size: 15px;
+				color: #E23C26;
+				line-height: 42px;
+			}
+			.find-title-date{
+				float: right;
+				font-size: 13px;
+				color: #999999;
+ 				line-height: 42px;
+			}
+			.find-money-detail,
+			.find-money-date{
+				border-top:1px solid #dddddd;
+			}
+			.find-money-date{
+				padding: 5px 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></a>
+		    <h1 class="mui-title">消息详情</h1>
+		</header>
+		<div class="mui-content mui-scroll-wrapper" id="muiContent">
+			<div class="mui-scroll">
+				<div class="find-list">
+					<div class="find-content">
+						<div class="find-title">
+							<div class="find-title-message mui-clearfix">
+								<span>还款消息</span>
+								<span class="find-title-date">2017-12-25</span>
+							</div>
+						</div>
+						<div class="find-tips">
+							2017-12-15 您需要还款 ￥1500.00
+						</div>
+						<div class="find-money-detail">
+							<div class="mui-row">
+								<div class="mui-col-sm-6 mui-col-xs-6">本金: ¥1000.00</div>
+								<div class="mui-col-sm-6 mui-col-xs-6">违约金： ¥0.00</div>
+							</div>
+							<div class="mui-row">
+								<div class="mui-col-sm-6 mui-col-xs-6">利息： ¥12.00</div>
+								<div class="mui-col-sm-6 mui-col-xs-6">服务费： ¥10.00</div>
+							</div>
+						</div>
+						<div class="find-money-date">
+							<div class="mui-row">
+								<div class="mui-col-sm-6 mui-col-xs-6">本期数： 5</div>
+								<div class="mui-col-sm-6 mui-col-xs-6">剩余期数： 7</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function () {			    
+				COM.biz.setImmersed();
+			})
+		
+		</script>
+	</body>
+
+</html>

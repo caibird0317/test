@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.mui.css"/>
+		<style type="text/css">
+			
+			.message-tips-dot {
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				width: 8px;
+				height: 8px;
+				z-index: 2;
+				background: #ffff00;
+				border-radius: 50%;
+			}
+			.find-list{
+				left: 4%;
+				width: 92%;
+				margin-top: 10px;
+				padding: 0 4%;
+				width: 100%;
+			}
+			.find-content{
+				background: white;
+				box-shadow: 0 5px 10px 0 
+				border-radius: 4px;
+				padding:0px 4% 3% 4%;
+			}
+			.find-title{
+				font-size: 15px;
+				color: #333333;
+ 				line-height: 42px;
+ 				border-bottom:1px solid #dddddd;
+ 				margin-bottom: 10px;
+			}
+			.find-banner{
+				padding: 5px 0;
+				width: 100%;
+				height: 100%;
+			}
+			.find-banner img{
+				width: 100%;
+				border-radius: 4px;
+			}
+			.find-tips{
+				font-size: 12px;
+				color: #666666;
+				line-height: 20px;
+			}
+			.find-date{
+				text-align: center;
+				font-size: 13px;
+				margin-top: 15px;
+				color: #999999;
+				margin-bottom: 15px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<span class="mui-icon mui-icon-bars mui-pull-left"></span>
+		    <h1 class="mui-title">发现</h1>
+			<span class="mui-icon mui-icon-email mui-pull-right mui-pull-right" style="font-size:200%;line-height: 25px;">
+		    	<span id="ureadTips" class="message-tips-dot"></span>
+		    </span>
+		</header>
+		<div class="mui-content mui-scroll-wrapper" id="muiContent">
+			<div class="mui-scroll">
+				<div class="find-list">
+					<div class="find-content" id="luckyPrize">
+						<div class="find-title">幸运大抽奖</div>
+						<div class="find-banner">
+							<img src="../images/find_banner.png"/>
+						</div>
+						<div class="find-tips">
+							你是否时常感觉工作时间不够？
+							原有的事情完不成，又有新的任务下达？
+							你是否永远因为解决紧急的突发事件推迟了本有的工作，
+							导致本有的工作完不成？
+						</div>
+					</div>
+					<div class="find-date">2017-12-23</div>
+				</div>
+				<div class="find-list">
+					<div class="find-content">
+						<div class="find-title">幸运大抽奖</div>
+						<div class="find-banner">
+							<img src="../images/find_banner.png"/>
+						</div>
+						<div class="find-tips">你是否时常感觉工作时间不够？
+							原有的事情完不成，又有新的任务下达？
+							你是否永远因为解决紧急的突发事件推迟了本有的工作，导致本有的工作完不成？</div>
+					</div>
+					<div class="find-date">2017-12-23</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init({
+				pullRefresh: {
+					container: "#muiContent", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+					down: {
+						style: 'circle', //必选，下拉刷新样式，目前支持原生5+ ‘circle’ 样式
+						color: '#E23C26', //可选，默认“#2BD009” 下拉刷新控件颜色
+						height: '50px', //可选,默认50px.下拉刷新控件的高度,
+						range: '100px', //可选 默认100px,控件可下拉拖拽的范围
+						offset: '60px', //可选 默认0px,下拉刷新控件的起始位置
+						auto: false, //可选,默认false.首次加载自动上拉刷新一次
+						callback: initPullfresh //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					}
+				}
+			});
+			function initPullfresh(){
+				//下拉刷新结束
+				console.log("find页面下拉刷新");
+				try{
+					mui('#muiContent').pullRefresh().endPulldown();
+					console.log()
+				}catch(e){
+					mui('#muiContent').pullRefresh().endPullupToRefresh()
+				}
+			}
+			mui.plusReady(function () {
+				COM.biz.setImmersed();
+			});
+			document.getElementById("luckyPrize").addEventListener("tap",function(){
+				mui.openWindow({
+					url:"prize.html",
+					id: "prize.html"
+				})
+				//去我的mokuai
+//				mui.fire(plus.webview.getWebviewById("comm.html"),'gohome',{
+//				   id:"1111"
+//				});
+			})
+//			console.log("find");
+		</script>
+	</body>
+
+</html>

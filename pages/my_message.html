@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.mui.css"/>
+		<style type="text/css">
+			.find-list{
+				left: 4%;
+				width: 92%;
+				margin-top: 10px;
+				padding: 0 4%;
+				width: 100%;
+			}
+			.find-content{
+				background: white;
+				box-shadow: 0 5px 10px 0 
+				border-radius: 4px;
+				padding:0px 4% 3% 4%;
+			}
+			.find-title{
+				font-size: 13px;
+				color: #999999;
+ 				line-height: 42px;
+ 				border-bottom:1px solid #dddddd;
+ 				margin-bottom: 10px;
+			}
+			.find-tips{
+				font-size: 14px;
+				color: #666666;
+				line-height: 20px;
+			}
+			.float-l{
+				float: left;
+			}
+			.float-r{
+				float: right;
+			}
+			.find-title-message{
+				font-size: 15px;
+				color: #E23C26;
+				line-height: 42px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></a>
+		    <h1 class="mui-title">个人消息</h1>
+		</header>
+		<div class="mui-content mui-scroll-wrapper" id="muiContent">
+			<div class="mui-scroll">
+				<div class="find-list">
+					<div class="find-content">
+						<div class="find-title mui-clearfix">
+							<div class="float-l find-title-message">还款消息</div>
+							<div class="float-r">2017-12-24</div>
+						</div>
+						<div class="find-tips">
+							2017-12-15 您需要还款 ￥1500.00
+						</div>
+					</div>
+				</div>
+				
+				<div class="find-list">
+					<div class="find-content">
+						<div class="find-title mui-clearfix">
+							<div class="float-l find-title-message">还款消息</div>
+							<div class="float-r">2017-12-24</div>
+						</div>
+						<div class="find-tips">
+							2017-12-15 您需要还款 ￥1500.00
+						</div>
+					</div>
+				</div>
+				
+				<div class="find-list">
+					<div class="find-content">
+						<div class="find-title mui-clearfix">
+							<div class="float-l find-title-message">还款消息</div>
+							<div class="float-r">2017-12-24</div>
+						</div>
+						<div class="find-tips">
+							2017-12-15 您需要还款 ￥1500.00
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function () {			    
+				COM.biz.setImmersed()
+			})
+			mui('#muiContent').on('tap','.find-list',function(){
+				mui.openWindow({
+					url: "my_message_detail.html",
+					id: "my_message_detail.html"
+				})
+			})
+		</script>
+	</body>
+
+</html>

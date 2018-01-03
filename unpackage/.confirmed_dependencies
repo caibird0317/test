@@ -1,0 +1,106 @@
+{
+	"pages/comm.html": {
+		"resources": [
+			"pages/shouye.html",
+			"pages/home.html"
+		],
+		"refer": [
+			"pages/shouye.html",
+			"pages/my.html",
+			"pages/find.html",
+			"pages/home.html"
+		]
+	},
+	"login.html": {
+		"refer": [
+			"reg.html",
+			"pages/comm.html",
+			"pages/home.html"
+		],
+		"resources": [
+			"fonts/mui.ttf"
+		]
+	},
+	"pages/home.html": {
+		"refer": [
+			"pages/apply_borrowed.html",
+			"pages/my_borrowed.html",
+			"pages/repayment_record.html",
+			"pages/identity_info.html",
+			"pages/inactive.html"
+		],
+		"resources": []
+	},
+	"pages/apply_borrowed.html": {
+		"refer": [
+			"pages/my_borrowed.html"
+		],
+		"resources": []
+	},
+	"pages/find.html": {
+		"refer": [
+			"pages/prize.html"
+		],
+		"resources": []
+	},
+	"pages/my_borrowed.html": {
+		"refer": [
+			"pages/my_borrowed_detail.html"
+		],
+		"resources": []
+	},
+	"pages/repayment_record.html": {
+		"refer": [
+			"pages/repayment_record_detail.html"
+		],
+		"resources": []
+	},
+	"pages/my.html": {
+		"refer": [
+			"pages/my_faceback.html",
+			"login.html",
+			"pages/my_syslist.html",
+			"pages/my_reset_pwd.html"
+		]
+	},
+	"pages/my_syslist.html": {
+		"refer": [
+			"pages/my_syslist_detail.html"
+		]
+	},
+	"pages/identity_info.html": {
+		"refer": [
+			"pages/contact_info.html",
+			"pages/unit_info.html"
+		]
+	},
+	"pages/contact_info.html": {
+		"refer": [
+			"pages/more_info.html",
+			"pages/unit_info.html"
+		]
+	},
+	"pages/unit_info.html": {
+		"refer": [
+			"pages/more_info.html",
+			"pages/home_iswork.html"
+		]
+	},
+	"pages/inactive.html": {
+		"refer": [
+			"pages/identity_info.html"
+		]
+	},
+	"pages/more_info.html": {
+		"refer": [
+			"pages/activation.html",
+			"pages/bank_account.html",
+			"pages/address.html"
+		]
+	},
+	"pages/home_iswork.html": {
+		"refer": [
+			"pages/more_info.html"
+		]
+	}
+}

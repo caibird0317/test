@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.mui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mui.poppicker.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/comm.css">
+		<style>
+			.id-unauthorized{
+				font-size:15px;
+				line-height: 44px;
+			}
+			.id-progress-one{
+				width: 10%;
+			}
+			.id-progress-two{
+				width: 36.7%;
+			}
+			.id-progress-three{
+				width: 63.4%;
+			}
+			.id-progress-foue{
+				width: 90%;
+			}
+			.id-progress-name{
+				margin-top: 30px;
+				display: block;
+				width: 50px;
+				margin-left: -12px;
+			}
+			.id-progress{
+				width: 100%;
+				height: 88px;
+				background: #FFFFFF;
+			}
+			.id-progress-lxr{
+				margin-top: 30px;
+				display: block;
+				width: 70px;
+				margin-left: -20px;
+			}
+			.more-input{
+				background: #FFFFFF;
+				margin-left: 12px;
+				position: relative;
+				border-bottom: 1px solid #d5d5d5;
+			}
+			.more-input input,
+			.more-input div
+			 {
+				height: 44px;
+				line-height: 44px;
+				padding-left: 0px;
+				margin-bottom: 0px;
+				border: none;
+				font-size: 15px;
+				color: #333333;
+			}
+			.more-input input{
+				width: 70%;
+				padding-left: 15px;
+				color: #888888;
+			}
+			.more-input span.mui-icon{
+				padding-top: 10px;
+				color:#888888;
+			}
+			.unit-tips{
+				font-size: 13px;
+				color: #888888;
+				line-height: 44px;
+				padding-left: 12px;
+			}
+			.contact-footer{
+				width: 90%;
+				font-size: 12px;
+				text-align: center;
+				color: #888888;
+				margin: 0 auto;
+				margin-top: 40px;
+			}
+			
+			.contact-button {
+				height: 44px;
+				width: 100%;
+				background: #E5E5E5;
+				border-radius: 4px;
+				font-size: 18px;
+				color: #BBBBBB;
+				border: 0px;
+			}
+			.next{
+				background: #E23C26;
+				color: #FFFFFF;
+			}
+			.contact-bc{
+				font-size: 12px;
+				color: #888888;
+				width: 100%;
+				text-align:center;
+				bottom: 5%;
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			.width60{
+				width: 60px;
+			}
+			.border0{
+				border-bottom: 0px;
+			}
+			.text-r{
+				text-align: right;
+			}
+			.w100F{
+				width: 100%;
+				background: #FFFFFF;
+			}
+			.margin-t-20{
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></a>
+		    <h1 class="mui-title">单位信息</h1>
+			<span class="mui-pull-right mui-pull-right id-unauthorized">
+		    	未认证
+		    </span>
+		</header>
+		<div class="mui-content" id="muiContent">
+			<div class="id-progress">
+				<div class="bc-progress-steps">
+					<div class="progress">
+						<div class="dot w0 over"><span class="id-progress-name">身份信息</span></div>
+						<div class="dot w33 over"><span class="id-progress-lxr red">联系人信息</span></div>
+						<div class="dot w66"><span class="id-progress-name">单位信息</span></div>
+						<div class="dot w100 uncheck"><span class="id-progress-name">更多资料</span></div>
+						<div class="progress-bar id-progress-four"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="unit-tips">
+				选择填写您的单位信息
+			</div>
+			<div class="w100F">
+				<div class="more-input mui-clearfix">
+					<div class="mui-pull-left width60">单位名称</div>
+					<input type="text" class="mui-pull-left" placeholder="请填写您工作的单位名称" />
+				</div>
+				<div class="more-input mui-clearfix" id="showCityPicker">
+					<div class="mui-pull-left width60">单位地址</div>
+					<input type="text" class="mui-pull-left text-r" id="cityResult" placeholder="请选择省市区" />
+					<span class="mui-icon mui-icon-arrowright"></span>
+				</div>
+				<div class="more-input mui-clearfix border0">
+					<div class="mui-pull-left width60">街道</div>
+					<input type="text" class="mui-pull-left" placeholder="请填写所在单位的详细地址" />
+				</div>
+				
+				<div class="more-input mui-clearfix border0">
+					<div class="mui-pull-left width60">单位电话</div>
+					<input type="text" class="mui-pull-left" placeholder="请填写区号-电话号码" />
+				</div>
+			</div>
+			
+			<div class="contact-footer">
+				<button class="contact-button button-red next" id="nextPagge">下一步</button>
+			</div>
+			<div class="contact-bc">
+				本服务由百城急用钱提供支持
+			</div>
+			
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			var showCityPickerButton = document.getElementById('showCityPicker');
+			var cityResult = document.getElementById('cityResult');
+			var nextPagge = document.getElementById("nextPagge")
+			mui.plusReady(function () {
+			    COM.biz.setImmersed();
+			});
+			var cityPicker = new mui.PopPicker({
+				layer: 3
+			});
+			cityPicker.setData(cityData3);
+			showCityPickerButton.addEventListener('tap', function(event) {
+				cityPicker.show(function(items) {
+					cityResult.value = items[0]['text'] + " " +  items[1]['text'] + " " + items[2]['text'];
+				});
+			}, false);
+			
+			nextPagge.addEventListener('tap',function(){
+				mui.openWindow({
+					url: "more_info.html",
+					id: "more_info.html"
+				})
+			})
+		</script>
+	</body>
+
+</html>

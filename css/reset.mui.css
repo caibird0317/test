@@ -1,0 +1,24 @@
+/**
+ * 重置mui的样式
+ */
+
+/*重置title*/
+header.mui-bar.mui-bar-nav {
+	background-color: rgba(226,60,38,1);
+}
+header.mui-bar.mui-bar-nav.mui-bar-transparent{
+	background-color: rgba(226,60,38,0);
+}
+header.mui-bar.mui-bar-nav h1,
+header span,
+header a,
+header a.active
+{
+	font-size: 18px;
+	color: #FFFFFF;
+}
+.mui-bar .mui-icon:active{
+	opacity: 1;
+	color: #FFFFFF;
+}
+/**/

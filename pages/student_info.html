@@ -1,0 +1,316 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我是学生</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mui.poppicker.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/reset.mui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/comm.css">
+		<style type="text/css">
+			.id-unauthorized{
+				font-size:15px;
+				line-height: 44px;
+			}
+			.id-progress-one{
+				width: 10%;
+			}
+			.id-progress-two{
+				width: 36.7%;
+			}
+			.id-progress-three{
+				width: 63.4%;
+			}
+			.id-progress-foue{
+				width: 90%;
+			}
+			.id-progress-name{
+				margin-top: 30px;
+				display: block;
+				width: 50px;
+				margin-left: -12px;
+			}
+			.id-progress{
+				width: 100%;
+				height: 88px;
+				background: #FFFFFF;
+			}
+			.id-progress-lxr{
+				margin-top: 30px;
+				display: block;
+				width: 70px;
+				margin-left: -20px;
+			}
+			
+			
+			.student-input{
+				background: #FFFFFF;
+				margin-left: 12px;
+				position: relative;
+				border-bottom: 1px solid #d5d5d5;
+			}
+			.student-input input,
+			.student-input div
+			 {
+				height: 44px;
+				line-height: 44px;
+				padding-left: 0px;
+				margin-bottom: 0px;
+				border: none;
+				font-size: 15px;
+				color: #333333;
+			}
+			.student-input input{
+				padding: 10px 0px 10px 15px;
+				width: 75%;
+				padding-left: 15px;
+				color: #888888;
+			}
+			.student-input span.mui-icon-arrowright{
+				padding-top: 10px;
+				padding-left: 5px;
+				color: #888888;
+			}
+			.student-input input.text-r{
+				width: 70%;
+			}
+			
+			.unit-tips{
+				font-size: 13px;
+				color: #888888;
+				line-height: 44px;
+				padding-left: 12px;
+			}
+			.student-footer{
+				width: 90%;
+				font-size: 12px;
+				text-align: center;
+				color: #888888;
+				margin: 0 auto;
+				margin-top: 40px;
+			}
+			
+			.student-button {
+				height: 44px;
+				width: 100%;
+				background: #E5E5E5;
+				border-radius: 4px;
+				font-size: 18px;
+				color: #BBBBBB;
+				border: 0px;
+			}
+			.next{
+				background: #E23C26;
+				color: #FFFFFF;
+			}
+			.student-bc{
+				font-size: 12px;
+				color: #888888;
+				width: 100%;
+				text-align:center;
+				bottom: 5%;
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			.width60{
+				width: 60px;
+			}
+			.border0{
+				border-bottom: 0px;
+			}
+			.text-r{
+				text-align: right;
+			}
+			.w100F{
+				width: 100%;
+				background: #FFFFFF;
+			}
+			.margin-t-20{
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></a>
+		    <h1 class="mui-title">我是学生</h1>
+			<span class="mui-pull-right mui-pull-right id-unauthorized">
+		    	未认证
+		    </span>
+		</header>
+		<div class="mui-content" id="muiContent">
+			<div class="id-progress">
+				<div class="bc-progress-steps">
+					<div class="progress">
+						<div class="dot w0 over"><span class="id-progress-name">身份信息</span></div>
+						<div class="dot w33 over"><span class="id-progress-lxr red">联系人信息</span></div>
+						<div class="dot w66"><span class="id-progress-name">单位信息</span></div>
+						<div class="dot w100 uncheck"><span class="id-progress-name">更多资料</span></div>
+						<div class="progress-bar id-progress-three"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="unit-tips">
+				选择填写您的身份信息
+			</div>
+			<div class="w100F">
+				<div class="student-input mui-clearfix">
+					<div class="mui-pull-left width60">学校名称</div>
+					<input type="text" class="mui-pull-left" placeholder="请填写您就读的学校名称" />
+				</div>
+				<div class="student-input mui-clearfix" id="choseAreaBody">
+					<div class="mui-pull-left width60">学校地址</div>
+					<input type="text" class="mui-pull-left text-r" id="AreaValue" placeholder="请选择省市区" readonly="readonly"/>
+					<span class="mui-icon mui-icon-arrowright"></span>
+				</div>
+				<div class="student-input mui-clearfix border0">
+					<div class="mui-pull-left width60">街道</div>
+					<input type="text" class="mui-pull-left" placeholder="请填写所在学校的详细地址" />
+				</div>
+			</div>
+			
+			
+			<div class="w100F margin-t-20">
+				<div class="student-input mui-clearfix" id="choseStudyDate">
+					<div class="mui-pull-left width60">入学年份</div>
+					<input type="text" class="mui-pull-left text-r" id="StudyDateValue" placeholder="请选择入学年份" readonly="readonly"/>
+					<span class="mui-icon mui-icon-arrowright"></span>
+				</div>
+				<div class="student-input mui-clearfix" id="choseStudyLevel">
+					<div class="mui-pull-left width60">在读学历</div>
+					<input type="text" class="mui-pull-left text-r" id="studyLevelValue" placeholder="请选择在读学历" readonly="readonly"/>
+					<span class="mui-icon mui-icon-arrowright"></span>
+				</div>
+				<div class="student-input mui-clearfix border0" id="choseAcademicSystem">
+					<div class="mui-pull-left width60">学制</div>
+					<input type="text" class="mui-pull-left text-r" id="academicSystemValue" placeholder="请选择学制" readonly="readonly"/>
+					<span class="mui-icon mui-icon-arrowright"></span>
+				</div>
+			</div>
+			
+			
+			<div class="student-footer">
+				<button class="student-button button-red next" id="nextPage">下一步</button>
+			</div>
+			<div class="student-bc">
+				本服务由百城急用钱提供支持
+			</div>
+			
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function () {
+			    COM.biz.setImmersed();
+			})
+			
+			var choseAreaBody = document.getElementById("choseAreaBody");
+			var AreaValue = document.getElementById("AreaValue");
+			
+			var choseStudyDate = document.getElementById("choseStudyDate");
+			var StudyDateValue = document.getElementById("StudyDateValue");
+			
+			var choseStudyLevel = document.getElementById("choseStudyLevel");
+			var studyLevelValue = document.getElementById("studyLevelValue");
+			
+			var choseAcademicSystem = document.getElementById("choseAcademicSystem");
+			var academicSystemValue = document.getElementById("academicSystemValue");
+			
+			var popPicker = new mui.PopPicker();
+			var cityPicker = new mui.PopPicker({
+				layer: 3
+			});
+			cityPicker.setData(cityData3);
+			// 学历map
+			var studyLevelMap = [
+				{
+					value:"初中",
+					text: "初中"
+				},
+				{
+					value:"高中",
+					text: "高中"
+				},
+				{
+					value:"本科",
+					text: "本科"
+				},
+				{
+					value:"硕士",
+					text: "硕士"
+				},
+				{
+					value:"博士",
+					text: "博士"
+				},
+				{
+					value:"其他",
+					text: "其他"
+				}
+			]
+			// 学制map
+			var academicSystem  = [
+				{
+					value: "全日制",
+					text: "全日制"
+				},
+				{
+					value: "非全日制",
+					text: "非全日制"
+				}
+			];
+			
+			// 选择地址
+			choseAreaBody.addEventListener('tap',function(){
+				cityPicker.show(function(items) {
+					AreaValue.value = items[0]['text'] + " " +  items[1]['text'] + " " + items[2]['text'];
+				});
+			});
+			//选择入学时间
+			choseStudyDate.addEventListener('tap',function(){
+				//时间模块的插件
+				var picker = new mui.DtPicker({
+					'type':"date"
+				});
+				picker.show(function(rs) {
+					StudyDateValue.value = rs.text;
+					// 关闭缓存
+					picker.dispose();
+					picker = null;
+				})
+			});
+			
+			//选择学历
+			choseStudyLevel.addEventListener('tap',function(){
+				popPicker.setData(studyLevelMap);
+				popPicker.show(function(rs) {
+					studyLevelValue.value = rs[0].text;
+				})
+			})
+			//选择学制
+			choseAcademicSystem.addEventListener('tap',function(){
+				popPicker.setData(academicSystem);
+				popPicker.show(function(rs) {
+					academicSystemValue.value = rs[0].text;
+				});
+			})
+			document.getElementById("nextPage").addEventListener('tap',function(){
+				mui.openWindow({
+					url: "more_info.html",
+					id: "more_info.html"
+				})
+			})
+		</script>
+	</body>
+
+</html>

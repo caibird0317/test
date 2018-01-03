@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>更多资料</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.mui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/comm.css">
+		<style type="text/css">
+			.id-unauthorized{
+				font-size:15px;
+				line-height: 44px;
+			}
+			.id-progress-one{
+				width: 10%;
+			}
+			.id-progress-two{
+				width: 36.7%;
+			}
+			.id-progress-three{
+				width: 63.4%;
+			}
+			.id-progress-foue{
+				width: 90%;
+			}
+			.id-progress-name{
+				margin-top: 30px;
+				display: block;
+				width: 50px;
+				margin-left: -12px;
+			}
+			.id-progress{
+				width: 100%;
+				height: 88px;
+				background: #FFFFFF;
+			}
+			.id-progress-lxr{
+				margin-top: 30px;
+				display: block;
+				width: 70px;
+				margin-left: -20px;
+			}
+			.unit-tips{
+				font-size: 13px;
+				color: #888888;
+				line-height: 44px;
+				padding-left: 12px;
+			}
+			.next{
+				background: #E23C26;
+				color: #FFFFFF;
+			}
+			.color1a{
+				color: #1a1a1a;
+			}
+			.mui-table-view .mui-table-view-cell .mui-navigate-right .w20{
+				width: 20px;
+				height: 20px;
+			}
+			.certification{
+				position: absolute;
+				top: 28%;
+				font-size: 14px;
+				color: #E23C26;
+				right: 40px;
+			}
+			.uncertification{
+				position: absolute;
+				top: 28%;
+				font-size: 14px;
+				color: #BBBBBB;
+				right: 40px;
+			}
+			.more-footer{
+				width: 90%;
+				font-size: 12px;
+				text-align: center;
+				color: #888888;
+				position: absolute;
+			    left: 5%;
+			    bottom: 10%;
+			}
+			
+			.more-button {
+				height: 44px;
+				width: 100%;
+				background: #E5E5E5;
+				border-radius: 4px;
+				font-size: 18px;
+				color: #BBBBBB;
+				border: 0px;
+			}
+			.submit{
+				background: #E23C26;
+				color: #FFFFFF;
+			}
+			.more-bc{
+				font-size: 12px;
+				color: #888888;
+				position: fixed;
+				width: 100%;
+				text-align:center;
+				bottom: 2%;
+			}
+			.red{
+				color: red;
+			}
+			.mui-table-view-cell:after {
+			    left: 40px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"><span>返回</span></a>
+		    <h1 class="mui-title">更多资料</h1>
+			<span class="mui-pull-right mui-pull-right id-unauthorized">
+		    	未认证
+		    </span>
+		</header>
+		<div class="mui-content" id="muiContent">
+			<div class="id-progress">
+				<div class="bc-progress-steps">
+					<div class="progress">
+						<div class="dot w0 over"><span class="id-progress-name">身份信息</span></div>
+						<div class="dot w33 over"><span class="id-progress-lxr">联系人信息</span></div>
+						<div class="dot w66 over"><span class="id-progress-name">单位信息</span></div>
+						<div class="dot w100"><span class="id-progress-name red">更多资料</span></div>
+						<div class="progress-bar id-progress-foue"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="unit-tips">
+				完成以下任务可以更全面的为您进行信用评估
+			</div>
+			<ul class="mui-table-view mui-table-view-chevron" id="bankAcount">
+				<li class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left w20" src="../images/tile7.png">
+						<div class="mui-media-body">
+							<p class='mui-ellipsis color1a'>银行账号</p>
+						</div>
+					</a>
+					<span class="certification">已认证</span>
+				</li>
+				<li class="mui-table-view-cell mui-media" id="qqAcount">
+					<a class='mui-navigate-right' href="javascript:;">
+						<img class="mui-media-object mui-pull-left w20" src="../images/tile8.png">
+						<div class="mui-media-body">
+							<p class='mui-ellipsis color1a'>QQ号</p>
+						</div>
+					</a>
+					<span class="uncertification">未认证</span>
+				</li>
+				<li class="mui-table-view-cell mui-media" id="weixinAcount">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left w20" src="../images/tile9.png">
+						<div class="mui-media-body">
+							<p class='mui-ellipsis color1a'>微信号</p>
+						</div>
+					</a>
+					<span class="uncertification">未认证</span>
+				</li>
+				<li class="mui-table-view-cell mui-media" id="addressAcoount">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left w20" src="../images/tile6.png">
+						<div class="mui-media-body">
+							<p class='mui-ellipsis color1a'>住址信息</p>
+						</div>
+					</a>
+					<span class="uncertification">未认证</span>
+				</li>
+			</ul>
+			
+			<div class="more-footer">
+				<button class="more-button button-red submit" id="statusCommit">提交</button>
+			</div>
+			<div class="more-bc">
+				本服务由百城急用钱提供支持
+			</div>
+			
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/comm.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function () {
+			    COM.biz.setImmersed();
+			});
+			var addressAcoount = document.getElementById("addressAcoount");
+			var weixinAcount = document.getElementById("weixinAcount");
+			var qqAcount = document.getElementById("qqAcount");
+			var bankAcount = document.getElementById("bankAcount");
+			var statusCommit = document.getElementById("statusCommit");
+			// 银行
+			bankAcount.addEventListener('tap',function(){
+				mui.openWindow({
+					url:"bank_account.html",
+					id:"bank_account.html"
+				})
+			});
+			// qq
+			qqAcount.addEventListener('tap',function(){
+				mui.openWindow({
+					url:"qq.html",
+					id:"qq.html"
+				})
+			});
+			weixinAcount.addEventListener('tap',function(){
+				mui.openWindow({
+					url:"weixin.html",
+					id:"weixin.html"
+				})
+			});
+			addressAcoount.addEventListener('tap',function(){
+				mui.openWindow({
+					url:"address.html",
+					id:"address.html"
+				})
+			});
+			statusCommit.addEventListener('tap',function(){
+				mui.openWindow({
+					url:"activation.html",
+					id:"activation.html"
+				})
+			})
+		</script>
+	</body>
+
+</html>
