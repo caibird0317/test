@@ -81,8 +81,78 @@
 >>
 >> | 请求参数      |     参数类型 |   参数说明   |
 >> | :-------- | :--------| :------ |
->> | phone|  Number|  贷款金额 必填|
->> | password|  String|  注册登录密码 必填|
->> | jtNumer|  Number|  推荐人的手机号码 非必填|
+>> | loanAmount|  Number|  贷款金额 必填|
+>> | reDate|  Date|  还款日期 必填|
+>> | description|  String|  抵押说明 非必填|
 >>- **返回参数**
+>>```javascript
+>>{
+>>   result: 0
+>>}
+>>```
+>> ##### 3.1.3 我的借款
+>>- **请求URL**
+>>     /app/getMyLoanList
+>>- **请求参数**
+>> --- 暂无
+>>- **返回参数**
+>>```javascript
+>>{
+>>   result: 0
+>>   //借款列表 取当前用户的所有借款列表
+>>   list: [
+>>     {
+>>        status:0,  //借款状态。  0申请中，1已生效
+>>        loanId: "20180101",  //借款编号
+>>        totalLoanMoney: "50000.00" // 贷款总额
+>>     },
+>>     {
+>>        status: 1,   //借款状态。  0申请中，1已生效
+>>        loanId: "20180101",  //借款编号
+>>        totalLoanMoney: "50000.00", // 贷款总额
+>>        lessLoanMoney:"3000.00",   // 贷款余额
+>>        issuesNumer: "5期",         //已还第几期
+>>        issuesDate: "12月15号应还¥1000.00",  //第几期还的钱
+>>        activeDate: "2017-12-10",  // 生效日期
+>>        finishDate: "2018-10-10"   // 结束日期       
+>>     }
+>>   ]
+>>}
+>>```
+>> ##### 3.1.3 我的借款详情
+>>- **请求URL**
+>>     /app/getMyLoanDetail
+>>- **请求参数**
+>>
+>> | 请求参数      |     参数类型 |   参数说明   |
+>> | :-------- | :--------| :------ |
+>> | loanId|  String|  上一个页面传入|
+>>- **返回参数**
+>>```javascript
+>>{
+>>   result: 0
+>>   //借款详情
+>>   list: [
+>>     {
+>>        loanId: "JKBH-20171207", //借款编号
+>>        loanDate: "2017.12.07",  // 借款日期
+>>        loanMoney: "8000.00",  // 贷款金额
+>>        replayLoanType: "等额本金", // 还款类型
+>>        serverFee: "50.00",       // 服务费
+>>        interestRate: "1.5%",     //利率
+>>        loanStatusText: "已生效",  // 贷款状态，这里尽量给文本，前端就不用做map映射    
+>>        reloanTimes: "12期",   // 还款期数
+>>        hasloanTimes: "5期",   // 已还期数
+>>        ownMoney: "5000.00",   // 尚欠金额
+>>        description: "吧啦啦啦", // 抵押说明
+>>        sales: "张三",   // 业务员  
+>>        salesTel: "13797979797", // 业务员电话 
+>>        activeDate: "2017-12-10",      // 生效日期
+>>        repaymentTypeText: "银行转账",  // 还款方式   
+>>        repaymentAccount："6214 **** **** 5533", //还款账号
+>>        repaymentBankText: "招商银行"
+>>     }
+>>   ]
+>>}
+>>```
 ----
