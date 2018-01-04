@@ -362,11 +362,102 @@
 >>- **请求URL**
 >>     /app/getStudentSelect
 >>- **请求参数**
->> 
+>>  暂无
 >>- **返回参数**
 >>```javascript
 >>{
->>   result:0
+>>   // 学历
+>>   studyLevel:[
+>>     {
+>>        text: "初中",
+>>        value: "cz",
+>>     },
+>>     {
+>>        text: "高中",
+>>        value: "gz",
+>>     },
+>>     {
+>>        text: "本科",
+>>        value: "bk",
+>>     }
+>>   ],
+>>   // 学制
+>>   schoolSystem:[
+>>     {
+>>        text: "全日制",
+>>        value: "qrz",
+>>     },
+>>     {
+>>        text: "非全日制",
+>>        value: "fqrz",
+>>     }
+>>   ]
+>> }
+>> ```
+>> ##### 3.4.6 获取学生信息
+>>- **请求URL**
+>>     /app/getStudentInfo
+>>- **请求参数**
+>>  ---暂无
+>>- **返回参数**
+>>```javascript
+>>{
+>>   schoolName: "清华大学", // 学校名 
+>>   province: "xxx-xxx-xxx", // 省市区
+>>   detailAddress: "幸福里小区"， //详细地址 
+>>   goSchoolOfDate: "2011-10-10",  // 入学时间
+>>   studyLevel: "本科", //学历
+>>   schoolSystem: "全日制" //学制
+>> }
+>> ```
+>> ##### 3.4.7 设置学生信息
+>>- **请求URL**
+>>     /app/getStudentInfo
+>>- **请求参数**
+>>
+>> | 请求参数      |     参数类型 |   参数说明   |
+>> | :-------- | :--------| :------ |
+>> | schoolName|  String| 学校名 用户输入|
+>> | province|  String| 省市区 用户选择|
+>> | detailAddress|  String| 详细地址 用户输入|
+>> | goSchoolOfDate|  String| 入学时间  用户选择|
+>> | studyLevel|  String| 在读学历  用户选择|
+>> | schoolSystem|  String| 学制 选择|
+>>- **返回参数**
+>>```javascript
+>>{
+>>   result: 0
+>> }
+>> ```
+>> ##### 3.4.8 获取单位信息
+>>- **请求URL**
+>>     /app/getWorkInfo
+>>- **请求参数**
+>>  ---暂无
+>>- **返回参数**
+>>```javascript
+>>{
+>>   workName: "阿里巴巴", // 单位名称 
+>>   province: "xxx-xxx-xxx", // 省市区
+>>   detailAddress: "幸福里小区"， //街道 
+>>   tel: "13897979797"  //单位电话
+>> }
+>> ```
+>> ##### 3.4.9 获取单位信息
+>>- **请求URL**
+>>     /app/setWorkInfo
+>>- **请求参数**
+>>
+>> | 请求参数      |     参数类型 |   参数说明   |
+>> | :-------- | :--------| :------ |
+>> | workName|  String| 单位名 用户输入|
+>> | province|  String| 省市区 用户选择|
+>> | detailAddress|  String| 详细地址 用户输入|
+>> | tel|  String| 单位电话  用户输入|
+>>- **返回参数**
+>>```javascript
+>>{
+>>   result：0
 >> }
 >> ```
 ----
