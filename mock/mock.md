@@ -1,5 +1,6 @@
 
 ## 接口文档 ##
+[TOC]
 ### 1、登录页面 
 #### 用户登录
 - **请求URL**
@@ -132,25 +133,115 @@
 >>{
 >>   result: 0
 >>   //借款详情
+>>   loanId: "JKBH-20171207", //借款编号
+>>   loanDate: "2017.12.07",  // 借款日期
+>>   loanMoney: "8000.00",  // 贷款金额
+>>   replayLoanType: "等额本金", // 还款类型
+>>   serverFee: "50.00",       // 服务费
+>>   interestRate: "1.5%",     //利率
+>>   loanStatusText: "已生效",  // 贷款状态，这里尽量给文本，前端就不用做map映射    
+>>   reloanTimes: "12",   // 还款期数
+>>   hasloanTimes: "5",   // 已还期数
+>>   ownMoney: "5000.00",   // 尚欠金额
+>>   description: "吧啦啦啦", // 抵押说明
+>>   sales: "张三",   // 业务员  
+>>   salesTel: "13797979797", // 业务员电话 
+>>   activeDate: "2017-12-10",      // 生效日期
+>>   repaymentTypeText: "银行转账",  // 还款方式   
+>>   repaymentAccount："6214 **** **** 5533", //还款账号
+>>   repaymentBankText: "招商银行"
+>> }
+>>```
+>> ##### 3.1.4 还款记录
+>>- **请求URL**
+>>     /app/getRepaymentlist
+>>- **请求参数**
+>>  --- 暂无
+>>- **返回参数**
+>>```javascript
+>>{
+>>   result: 0,
+>>   //还款列表
 >>   list: [
 >>     {
 >>        loanId: "JKBH-20171207", //借款编号
 >>        loanDate: "2017.12.07",  // 借款日期
->>        loanMoney: "8000.00",  // 贷款金额
->>        replayLoanType: "等额本金", // 还款类型
->>        serverFee: "50.00",       // 服务费
->>        interestRate: "1.5%",     //利率
->>        loanStatusText: "已生效",  // 贷款状态，这里尽量给文本，前端就不用做map映射    
->>        reloanTimes: "12期",   // 还款期数
->>        hasloanTimes: "5期",   // 已还期数
->>        ownMoney: "5000.00",   // 尚欠金额
->>        description: "吧啦啦啦", // 抵押说明
->>        sales: "张三",   // 业务员  
->>        salesTel: "13797979797", // 业务员电话 
 >>        activeDate: "2017-12-10",      // 生效日期
->>        repaymentTypeText: "银行转账",  // 还款方式   
->>        repaymentAccount："6214 **** **** 5533", //还款账号
->>        repaymentBankText: "招商银行"
+>>        totalLoanMoney: "50000.00", // 贷款总额
+>>        lessLoanMoney:"3000.00",   // 贷款余额
+>>        reloanTimes: "12",   // 还款期数
+>>        hasloanTimes: "5",   // 已还期数
+>>     },
+>>     {
+>>        loanId: "JKBH-20171207", //借款编号
+>>        loanDate: "2017.12.07",  // 借款日期
+>>        activeDate: "2017-12-10",      // 生效日期
+>>        totalLoanMoney: "50000.00", // 贷款总额
+>>        lessLoanMoney:"3000.00",   // 贷款余额
+>>        reloanTimes: "12",   // 还款期数
+>>        hasloanTimes: "5",   // 已还期数
+>>     }
+>>   ]
+>>}
+>>```
+>> ##### 3.1.5 还款记录详情
+>>- **请求URL**
+>>     /app/getRepaymentDetail
+>>- **请求参数**
+>>
+>> | 请求参数      |     参数类型 |   参数说明   |
+>> | :-------- | :--------| :------ |
+>> | loanId|  String|  上一个页面传入|
+>>- **返回参数**
+>>```javascript
+>>{
+>>   result: 0,
+>>   hasTotalRepayment: "8000.00", // 已还款
+>>   currentRepayment: "1000.00",  //本期应还
+>>   activeDate: "2017-12-11",  // 生效日期
+>>   totalCapital: "10000.00",     // 本金
+>>   totalBreakMoney: "100.00",    // 违约金
+>>   totalInterest: "100.00",      // 利息
+>>   totalServerFee: "20.00",      // 服务费
+>>   currentRepaymentTimes: "5",  // 本期期数
+>>   lessRepaymentTimes: "7",    // 剩余期数
+>>   // 已还款记录列表
+>>   recordList: [
+>>     {
+>>        date: "2017.10.11",  // 日期
+>>        totalMoney: "2000.00", // 总金额
+>>        status: "已结清", // 状态
+>>        capital: "10000.00", // 本金
+>>        interest: "0.00",  // 利息
+>>        breakMoney: "100.00",    // 违约金
+>>        serverFee: "20.00" // 服务费
+>>     },
+>>     {
+>>        date: "2017.10.11",  // 日期
+>>        totalMoney: "2000.00", // 总金额
+>>        status: "已结清", // 状态
+>>        capital: "10000.00", // 本金
+>>        interest: "0.00",  // 利息
+>>        breakMoney: "100.00",    // 违约金
+>>        serverFee: "20.00" // 服务费
+>>     },
+>>     {
+>>        date: "2017.10.11",  // 日期
+>>        totalMoney: "2000.00", // 总金额
+>>        status: "已结清", // 状态
+>>        capital: "10000.00", // 本金
+>>        interest: "0.00",  // 利息
+>>        breakMoney: "100.00",    // 违约金
+>>        serverFee: "20.00" // 服务费
+>>     },
+>>     {
+>>        date: "2017.10.11",  // 日期
+>>        totalMoney: "2000.00", // 总金额
+>>        status: "已结清", // 状态
+>>        capital: "10000.00", // 本金
+>>        interest: "0.00",  // 利息
+>>        breakMoney: "100.00",    // 违约金
+>>        serverFee: "20.00" // 服务费
 >>     }
 >>   ]
 >>}
