@@ -61,7 +61,7 @@
 ----
 ### 3、首页面 
 >#### 3.1申请贷款
->> ##### 3.1.1 获取贷款额度
+>> ##### 3.1.1 获取贷款的字典信息
 >>- **请求URL**
 >>     /app/getLoanline
 >>- **请求参数**
@@ -69,10 +69,30 @@
 >>- **返回参数**
 >>```javascript
 >>{
->>  // 最小贷款
->>  minCredit: "2000",
->>  // 最大贷款
->>  maxCredit: "3000"
+>>  // 套餐选择
+>>  prodList: [
+>>    {
+>>       productId: "111", // 产品ID
+>>       productName: "青年套餐", // 套餐名字
+>>       area: "5000.00 ~ 8000.00", // 可贷款区间
+>>    }，
+>>    {
+>>       productId: "222", // 产品ID
+>>       productName: "黑卡套餐", // 套餐名字
+>>       area: "8000.00 ~ 80000.00", // 可贷款区间
+>>    }
+>>  ],
+>>   // 还款期限
+>>  repayArea: [
+>>      {
+>>          text: "6个月",
+>>          value: "1"
+>>      },
+>>      {
+>>          text: "1年",
+>>          value: "2"
+>>      }
+>>  ]
 >>}
 >>```
 >> ##### 3.1.2 提交申请借款
@@ -83,7 +103,8 @@
 >> | 请求参数      |     参数类型 |   参数说明   |
 >> | :-------- | :--------| :------ |
 >> | loanAmount|  Number|  贷款金额 必填|
->> | reDate|  Date|  还款日期 必填|
+>> | repayArea|  String|  还款期限 必填|
+>> | productId|  String|  产品id 必填|
 >> | description|  String|  抵押说明 非必填|
 >>- **返回参数**
 >>```javascript
@@ -104,11 +125,13 @@
 >>   //借款列表 取当前用户的所有借款列表
 >>   list: [
 >>     {
+>>        productId: "xxx", // 借款套餐id 
 >>        status:0,  //借款状态。  0申请中，1已生效
 >>        loanId: "20180101",  //借款编号
 >>        totalLoanMoney: "50000.00" // 贷款总额
 >>     },
 >>     {
+>>        productId: "xxx", // 借款套餐id 
 >>        status: 1,   //借款状态。  0申请中，1已生效
 >>        loanId: "20180101",  //借款编号
 >>        totalLoanMoney: "50000.00", // 贷款总额
@@ -134,6 +157,7 @@
 >>{
 >>   result: 0
 >>   //借款详情
+>>   productId: "xxx", // 借款套餐id 
 >>   loanId: "JKBH-20171207", //借款编号
 >>   loanDate: "2017.12.07",  // 借款日期
 >>   loanMoney: "8000.00",  // 贷款金额
@@ -166,6 +190,7 @@
 >>   //还款列表
 >>   list: [
 >>     {
+>>        productId: "xxx", // 借款套餐id 
 >>        loanId: "JKBH-20171207", //借款编号
 >>        loanDate: "2017.12.07",  // 借款日期
 >>        activeDate: "2017-12-10",      // 生效日期
@@ -175,6 +200,7 @@
 >>        hasloanTimes: "5",   // 已还期数
 >>     },
 >>     {
+>>        productId: "xxx", // 借款套餐id 
 >>        loanId: "JKBH-20171207", //借款编号
 >>        loanDate: "2017.12.07",  // 借款日期
 >>        activeDate: "2017-12-10",      // 生效日期
@@ -198,6 +224,7 @@
 >>```javascript
 >>{
 >>   result: 0,
+>>   productId: "xxx", // 借款套餐id 
 >>   hasTotalRepayment: "8000.00", // 已还款
 >>   currentRepayment: "1000.00",  //本期应还
 >>   activeDate: "2017-12-11",  // 生效日期
