@@ -896,3 +896,20 @@
 >   result:0
 >}
 >```
+### 6 升级检测接口
+- **请求URL**
+> /app/getLastedVersion
+- **请求参数**
+
+ | 请求参数      |     参数类型 |   参数说明   |
+ | :-------- | :--------| :------ |
+ | MachineType|  iOS或Android| 传平台的值|
+- **返回参数**
+```javascript
+{
+   title:"版本更新",
+   version:"0.0.1",
+   note: "更新点说明",
+   url: "更新下载地址"
+}
+```
