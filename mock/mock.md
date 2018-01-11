@@ -562,10 +562,10 @@
 >> | :-------- | :--------| :------ |
 >> | payeeUser|  String| 收款人姓名 用户输入|
 >> | payeeAccount|  String| 收款人账号 用户输入|
->> | payeeBankCode|  String| 所属银行代码 用户选择|
+>> | payeeBankName|  String| 所属银行 用户选择|
 >> | repaymentUser|  String| 还款人账号 用户输入|
 >> | repaymentAccount|  String| 还款账号所属银行 用户输入|
->> | repaymentBankCode|  String| 所属银行代码 用户选择|
+>> | repaymentBankName|  String| 所属银行 用户选择|
 >>- **返回参数**
 >>```javascript
 >>{
