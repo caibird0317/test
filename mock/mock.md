@@ -506,7 +506,7 @@
 >>{
 >>   // 枚举类型 根据后台实现进行约定
 >>   bankAccountStatus: "0", // 银行账号认证状态 已认证、未认证
->>   QQStatus: "0",       // QQ认证状态 
+>>   qqStatus: "0",       // QQ认证状态 
 >>   weixinStatus: "0",   // 微信认证状态
 >>   addressStatus: "0",  // 住址认证状态
 >>}
