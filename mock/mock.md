@@ -431,7 +431,9 @@
 >>```javascript
 >>{
 >>   schoolName: "清华大学", // 学校名 
->>   province: "xxx-xxx-xxx", // 省市区
+>>   province: "xxx-xxx-xxx", // 省份
+>>   city: "xxx", //市
+>>   area: "xxx", // 区or县
 >>   detailAddress: "幸福里小区"， //详细地址 
 >>   goSchoolOfDate: "2011-10-10",  // 入学时间
 >>   studyLevel: "本科", //学历
@@ -446,7 +448,9 @@
 >> | 请求参数      |     参数类型 |   参数说明   |
 >> | :-------- | :--------| :------ |
 >> | schoolName|  String| 学校名 用户输入|
->> | province|  String| 省市区 用户选择|
+>> | province|  String| 省 用户选择|
+>> | city|  String| 市 用户选择|
+>> | area|  String| 区 用户选择|
 >> | detailAddress|  String| 详细地址 用户输入|
 >> | goSchoolOfDate|  String| 入学时间  用户选择|
 >> | studyLevel|  String| 在读学历  用户选择|
@@ -466,7 +470,9 @@
 >>```javascript
 >>{
 >>   workName: "阿里巴巴", // 单位名称 
->>   province: "xxx-xxx-xxx", // 省市区
+>>   province: "xxx-xxx-xxx", // 省份
+>>   city: "xxx", //市
+>>   area: "xxx", // 区or县
 >>   detailAddress: "幸福里小区"， //街道 
 >>   tel: "13897979797"  //单位电话
 >> }
@@ -479,7 +485,9 @@
 >> | 请求参数      |     参数类型 |   参数说明   |
 >> | :-------- | :--------| :------ |
 >> | workName|  String| 单位名 用户输入|
->> | province|  String| 省市区 用户选择|
+>> | province|  String| 省 用户选择|
+>> | city|  String| 市 用户选择|
+>> | area|  String| 区 用户选择|
 >> | detailAddress|  String| 详细地址 用户输入|
 >> | tel|  String| 单位电话  用户输入|
 >>- **返回参数**
