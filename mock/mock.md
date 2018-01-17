@@ -955,7 +955,8 @@
 >> | list|  Array| 通讯录的数组对象|
 >> | name|  String| 联系人  list[x].name|
 >> | phone|  String| 电话号码 list[x].phone|
->>demo： list: [ {name:"zhangsan", phone:"138888888888"} ]
+>
+>demo： list: [ {name:"zhangsan", phone:"138888888888"} ]
 >- **返回参数**
 >```javascript
 >{
