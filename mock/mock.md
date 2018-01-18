@@ -47,7 +47,7 @@
 | :-------- | :--------| :------ |
 | phone|  Number|  注册本人手机号码 必填|
 | password|  String|  注册登录密码 必填|
-| jtNumer|  Number|  推荐人的手机号码 非必填|
+| jtNubmer|  Number|  推荐人的手机号码 非必填|
 | agentNumber|  Number|  代理人手机号码 非必填|
 | checkCode|  String|  获取到的验证码 必填|
 - **返回参数**
@@ -945,6 +945,7 @@
 >> | :-------- | :--------| :------ |
 >> | phone|  Number| 电话号码(待确认，看能否拿到~)|
 >> | content|  String| 短信内容|
+>> | type|  (in/out)String| 接收还是发送 |
 >- **返回参数**
 >```javascript
 >{
