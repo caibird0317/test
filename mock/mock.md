@@ -72,18 +72,32 @@
 >>  // 套餐选择
 >>  prodList: [
 >>    {
->>       productId: "111", // 产品ID
->>       productName: "青年套餐", // 套餐名字
+>>       productId: "111", // 贷款项目编号
+>>       productName: "青年套餐", // 贷款项目名称
 >>       minArea: 5000.00, // 可贷款最小区间
 >>       maxArea: 8000.00, // 可贷款最大区间
->>       repayArea: "6个月"     // 还款期限后台设定，前端仅做展示
+>>       repayArea: "6"     // 还款期限后台设定，前端仅做展示
+>>       repayType:0,      //还款类型 （0:按日还款，1：按天还款，2：按月还款）
+>>       repayMode:0,        //还款方式(0:本息同还)
+>>       coverCharges：2000,     //服务费
+>>       interestRate：1.5,      //利率
+>>       interestType：0,         //利率类型（0：按日计息，1：按月计息，2：按季计息，3：按年计息）
+>>       overdueInterestRate：5.5, //逾期利率
+>>       description：幸福贷3号      //说明
 >>    }，
 >>    {
->>       productId: "222", // 产品ID
->>       productName: "黑卡套餐", // 套餐名字
+>>       productId: "111", // 贷款项目编号
+>>       productName: "青年套餐", // 贷款项目名称
 >>       minArea: 5000.00, // 可贷款最小区间
 >>       maxArea: 8000.00, // 可贷款最大区间
->>       repayArea: "12个月"      // 还款期限后台设定，前端仅做展示
+>>       repayArea: "6"     // 还款期限后台设定，前端仅做展示
+>>       repayType:0,      //还款类型 （0:按日还款，1：按天还款，2：按月还款）
+>>       repayMode:0,        //还款方式(0:本息同还)
+>>       coverCharges：2000,     //服务费
+>>       interestRate：1.5,      //利率
+>>       interestType：0,         //利率类型（0：按日计息，1：按月计息，2：按季计息，3：按年计息）
+>>       overdueInterestRate：5.5, //逾期利率
+>>       description：幸福贷3号      //说明
 >>    }
 >>  ]
 >>}
