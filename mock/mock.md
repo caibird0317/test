@@ -170,7 +170,7 @@
 >>   loanId: "JKBH-20171207", //借款编号
 >>   loanDate: "2017.12.07",  // 借款日期
 >>   loanMoney: "8000.00",  // 贷款金额
->>   replayLoanType: "等额本金", // 还款类型
+>>   replayLoanType: 0, // 还款类型 0:按日还款 1:按月还款 2:按年还款
 >>   serverFee: "50.00",       // 服务费
 >>   interestRate: "1.5%",     //利率
 >>   loanStatusText: "已生效",  // 贷款状态，这里尽量给文本，前端就不用做map映射    
@@ -180,8 +180,7 @@
 >>   description: "吧啦啦啦", // 抵押说明
 >>   sales: "张三",   // 业务员  
 >>   salesTel: "13797979797", // 业务员电话 
->>   activeDate: "2017-12-10",      // 生效日期
->>   repaymentTypeText: "银行转账",  // 还款方式   
+>>   activeDate: "2017-12-10",      // 生效日期 
 >>   repaymentAccount："6214 **** **** 5533", //还款账号
 >>   repaymentBankText: "招商银行"
 >> }
