@@ -146,6 +146,7 @@
 >>        totalLoanMoney: "50000.00", // 贷款总额
 >>        lessLoanMoney:"3000.00",   // 贷款余额
 >>        issuesNumber: "5期",         //已还第几期
+>>        totalNumber: "12",         //已还第几期
 >>        issuesDate: "12月15号应还¥1000.00",  //第几期还的钱
 >>        activeDate: "2017-12-10",  // 生效日期
 >>        finishDate: "2018-10-10"   // 结束日期       
