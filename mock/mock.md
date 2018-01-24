@@ -245,6 +245,7 @@
 >>   totalServerFee: "20.00",      // 服务费
 >>   currentRepaymentTimes: "5",  // 本期期数
 >>   lessRepaymentTimes: "7",    // 剩余期数
+>>   description: "" //补充描述
 >>   // 已还款记录列表
 >>   recordList: [
 >>     {
@@ -615,7 +616,7 @@
 >>
 >> | 请求参数      |     参数类型 |   参数说明   |
 >> | :-------- | :--------| :------ |
->> | QQ|  String| QQ账号 用户输入，后台注意成功后QQ的认证状态|
+>> | qq|  String| QQ账号 用户输入，后台注意成功后QQ的认证状态|
 >>- **返回参数**
 >>```javascript
 >>{
