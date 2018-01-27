@@ -304,7 +304,7 @@
 >>   idStatus: "",    // 身份状态
 >>   contactStatus: "", // 联系人信息认证状态
 >>   unitStatus: "",  // 单位或学校认证状态
->>   customerType: 0, // 0：已工作  1：学生
+>>   customerType: 0, // 0：已工作  1：学生  -1不知道身份
 >>   // 只有三个状态 0：未认证；  2：已认证；-1：认证失败 
 >>   moreStatus: "", //  更多信息认证状态
 >> }
@@ -993,11 +993,8 @@
 >>
 >> | 请求参数      |     参数类型 |   参数说明   |
 >> | :-------- | :--------| :------ |
->> | list|  Array| 通讯录的数组对象|
->> | name|  String| 联系人  list[x].name|
->> | phone|  String| 电话号码 list[x].phone|
+>> | contacts|  String| 通讯录的数组对象序列化|
 >
->demo： list: [ {name:"zhangsan", phone:"138888888888"} ]
 >- **返回参数**
 >```javascript
 >{
