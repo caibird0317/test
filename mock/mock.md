@@ -238,7 +238,7 @@
 >>   productId: "xxx", // 借款套餐id 
 >>   hasTotalRepayment: "8000.00", // 已还款
 >>   currentRepayment: "1000.00",  //本期应还
->>   activeDate: "2017-12-11",  // 生效日期
+>>   repaymentDateLine: "2017-12-11",  // 还款期限
 >>   totalCapital: "10000.00",     // 本金
 >>   totalBreakMoney: "100.00",    // 违约金
 >>   totalInterest: "100.00",      // 利息
@@ -251,6 +251,7 @@
 >>     {
 >>        date: "2017.10.11",  // 日期
 >>        totalMoney: "2000.00", // 总金额
+>>        overDay: 1, // 逾期天数
 >>        status: "已结清", // 状态
 >>        capital: "10000.00", // 本金
 >>        interest: "0.00",  // 利息
@@ -260,6 +261,7 @@
 >>     {
 >>        date: "2017.10.11",  // 日期
 >>        totalMoney: "2000.00", // 总金额
+>>        overDay: 1, // 逾期天数
 >>        status: "已结清", // 状态
 >>        capital: "10000.00", // 本金
 >>        interest: "0.00",  // 利息
@@ -269,6 +271,7 @@
 >>     {
 >>        date: "2017.10.11",  // 日期
 >>        totalMoney: "2000.00", // 总金额
+>>        overDay: 1, // 逾期天数
 >>        status: "已结清", // 状态
 >>        capital: "10000.00", // 本金
 >>        interest: "0.00",  // 利息
@@ -278,6 +281,7 @@
 >>     {
 >>        date: "2017.10.11",  // 日期
 >>        totalMoney: "2000.00", // 总金额
+>>        overDay: 1, // 逾期天数
 >>        status: "已结清", // 状态
 >>        capital: "10000.00", // 本金
 >>        interest: "0.00",  // 利息
