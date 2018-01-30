@@ -760,9 +760,12 @@
 >```javascript
 >{
 >   user: "张三", //用户
+>   userId: "xd00001", //用户ID
+>   userPhone: "13544445555", // 手机号
 >   balance: "5000.00", // 余额
->   sysMsgSize: "2",   // 系统消息个数
->   myMsgSize:"5" // 个人消息个数 
+>   uReadMymsg:"5" // 个人未读消息个数 
+>   uReadSysmsg: "2",   // 系统未读消息个数
+>   userStatus: 0    // 激活状态
 >}
 >```
 > #### 5.2 获取系统公告列表
