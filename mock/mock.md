@@ -204,8 +204,7 @@
 >>        productId: "xxx", // 借款套餐id 
 >>        loanId: "JKBH-20171207", //借款编号
 >>        loanDate: "2017.12.07",  // 借款日期
->>        repaymentDateLine: "2017-12-10",      // 还款日期
->>        currentRepaymentMoney: "555.00"  ,//本期还款总额
+>>        activeDate: "2017-12-10",      // 生效日期
 >>        totalLoanMoney: "50000.00", // 贷款总额
 >>        lessLoanMoney:"3000.00",   // 贷款余额
 >>        reloanTimes: "12",   // 还款期数
@@ -215,8 +214,7 @@
 >>        productId: "xxx", // 借款套餐id 
 >>        loanId: "JKBH-20171207", //借款编号
 >>        loanDate: "2017.12.07",  // 借款日期
->>        repaymentDateLine: "2017-12-10",      // 还款日期
->>        currentRepaymentMoney: "555.00"  ,//本期还款总额
+>>        activeDate: "2017-12-10",      // 生效日期
 >>        totalLoanMoney: "50000.00", // 贷款总额
 >>        lessLoanMoney:"3000.00",   // 贷款余额
 >>        reloanTimes: "12",   // 还款期数
@@ -774,9 +772,10 @@
 >- **请求URL**
 >> /app/getSysMsgList
 >- **请求参数**
-> | 请求参数 | 参数类型 | 参数说明 |
-> | :-------- | :--------| :------ |
-> | currentPage| Number| 获取第几页参数，第一次默认第一页 必填|
+>
+>> | 请求参数 | 参数类型 | 参数说明 |
+>> | :-------- | :--------| :------ |
+>> | currentPage| Number| 获取第几页参数，第一次默认第一页 必填|
 >- **返回参数**
 >```javascript
 >{
@@ -822,10 +821,10 @@
 >#### 5.4 获取个人消息的列表
 >- **请求URL**
 >> /app/getMyMsgList
->- **请求参数**
-> | 请求参数 | 参数类型 | 参数说明 |
-> | :-------- | :--------| :------ |
-> | currentPage| Number| 获取第几页参数，第一次默认第一页 必填|
+>- **请求参数**>
+>> | 请求参数 | 参数类型 | 参数说明 |
+>> | :-------- | :--------| :------ |
+>> | currentPage| Number| 获取第几页参数，第一次默认第一页 必填|
 >- **返回参数**
 >```javascript
 >{
