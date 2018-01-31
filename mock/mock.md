@@ -204,7 +204,8 @@
 >>        productId: "xxx", // 借款套餐id 
 >>        loanId: "JKBH-20171207", //借款编号
 >>        loanDate: "2017.12.07",  // 借款日期
->>        activeDate: "2017-12-10",      // 生效日期
+>>        repaymentDateLine: "2017-12-10",      // 还款日期
+>>        currentRepaymentMoney: "555.00"  ,//本期还款总额
 >>        totalLoanMoney: "50000.00", // 贷款总额
 >>        lessLoanMoney:"3000.00",   // 贷款余额
 >>        reloanTimes: "12",   // 还款期数
@@ -214,7 +215,8 @@
 >>        productId: "xxx", // 借款套餐id 
 >>        loanId: "JKBH-20171207", //借款编号
 >>        loanDate: "2017.12.07",  // 借款日期
->>        activeDate: "2017-12-10",      // 生效日期
+>>        repaymentDateLine: "2017-12-10",      // 还款日期
+>>        currentRepaymentMoney: "555.00"  ,//本期还款总额
 >>        totalLoanMoney: "50000.00", // 贷款总额
 >>        lessLoanMoney:"3000.00",   // 贷款余额
 >>        reloanTimes: "12",   // 还款期数
